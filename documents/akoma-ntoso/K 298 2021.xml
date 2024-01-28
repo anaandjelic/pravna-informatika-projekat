@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd " xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+	<judgment>
+		<meta>
+			<identification source="#court">
+				<FRBRWork>
+					<FRBRauthor>
+						Osnovni Sud u Baru
+					</FRBRauthor>
+					<FRBRdate date="2022-07-11">
+						2022-07-11
+					</FRBRdate>
+					<FRBRtitle>
+						K 298/2021
+					</FRBRtitle>
+					<FRBRcountry>
+						CG
+					</FRBRcountry>
+				</FRBRWork>
+			</identification>
+			<references>
+				<TLCOrganization eId="osbar" href="/ontology/organization/OsnovniSud.Bar" showAs="Osnovni sud u Baru" />
+				<TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo" showAs="Osnovno državno tužilaštvo" />
+				<TLCPerson eId="vraicevic" href="/ontology/person/vraicevic" showAs="Vladana Raičević" />
+				<TLCPerson eId="rfemic" href="/ontology/person/rfemic" showAs="Radmila Femić" />
+				<TLCPerson eId="je" href="/ontology/person/je" showAs="J. E." />
+				<TLCPerson eId="vm" href="/ontology/person/vm" showAs="V. M." />
+				<TLCPerson eId="gs" href="/ontology/person/gs" showAs="G. Š." />
+				<TLCRole eId="plaintiff" href="/ontology/role/plaintiff" showAs="Plaintiff" />
+				<TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+				<TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+				<TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+				<TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+				<TLCRole eId="defender" href="/ontology/role/defender" showAs="Defender" />
+			</references>
+		</meta>
+		<judgmentBody>
+			<p>
+				<organization id="osbar" referesTo="#osbar">
+					OSNOVNI SUD U BARU
+				</organization>
+				, sudija 
+				<party id="vraicevic" refersTo="#vraicevic" as="#judge">
+					Vladana Raičević
+				</party>
+				, uz učešće referentkinje suda 
+				<party id="rfemic" refersTo="#rfemic" as="#clerk">
+					Radmile Femić
+				</party>
+				, kao zapisničarke, u krivičnom predmetu protiv optuženog 
+				<party id="je" refersTo="#je" as="#defendant">
+					J. E.
+				</party>
+				., zbog krivičnog djela razbojnička krađa iz 
+				<ref href="/krivicni#art_241__list_1__point_1">
+					čl. 241 st. 1 Krivičnog zakonika Crne Gore 
+				</ref>
+				, po optužnici 
+				<organization id="odt" referesTo="#odt">
+					Osnovnog državnog tužilaštva u Baru 
+				</organization>
+				Kt. br.57/21 od 17.02.2021. godine, izmijenjenoj na glavnom pretresu održanom 
+				dana 11.07.2022.godine, nakon održanog javnog glavnog pretresa u prisustvu 
+				državnog tužioca u 
+				<organization id="odt" referesTo="#odt">
+					Osnovnom državnom tužilaštvu u Baru 
+				</organization>
+				<party id="vm" refersTo="#vm" as="#plaintiff">
+					V. M.
+				</party>
+				, 
+				<party id="je" refersTo="#je" as="#defendant">
+					optuženog J. E.
+				</party> 
+				i njegovog branioca po službenoj dužnosti 
+				<party id="gs" refersTo="#gs" as="#defender">
+					G. Š.
+				</party>
+				, advokata iz B., donio je dana 11.07.2022.godine i istog dana javno objavio sljedeću
+			</p>
+			<p style="text-align: center;">P R E S U D U</p>
+			<p>
+				<party id="je" refersTo="#je" as="#defendant">
+					Optuženi J. E.
+				</party>
+				, JMBG ..., od oca R. i majke P., rođene M., rođen 11.06.1984.godine u V., 
+				S. M., sa prebivalištem u V., ulica J. Đ. broj 51, državljanin S. M., oženjen, 
+				bez djece, pismen, srednjeg imovnog stanja, neosuđivan
+			</p>
+			<p style="text-align: center;">K r i v j e</p>
+			<p>Što je:</p>
+			<p>
+				Dana 21.01.2021.godine, u B., u naselju Zeleni pojas, oko 18,00 časova, svjestan 
+				svog djela čije izvršenje je htio i znajući da je njegovo djelo zabranjeno, na 
+				djelu krađe zatečen, pa u namjeri da ukradenu stvar zadrži upotrijebio silu protiv 
+				oštećenog B. R. D., na način što je, u namjeri da sebi pribavi protipravnu imovinsku 
+				korist oduzeo i prisvojio tuđu pokretnu stvar, tako što je ušao u kuću oštećenog, 
+				nakon čega je od oštećenog tražio da mu da novac, pa kada mu je oštećeni rekao da 
+				nema i da izađe iz kuće, počeo je da pretura po kući, da bi u jednom trenutku sa 
+				kreveta uzeo jastuk u kojem se nalazio novac u iznosu od 160,00 eura, i kada mu je 
+				oštećeni prišao i pokušao da ga spriječi, u namjeri da oduzetu stvar zadrži, udario 
+				je oštećenog metalnim predmetom, usled čega je oštećeni pao na pod, nakon čega se sa 
+				jastukom u kojem se nalazio novac udaljio u nepoznatom pravcu, čime je sebi pribavio 
+				protipravnu imovinsku korist u vrijednosti oduzetog novca
+			</p>
+			<p>
+				- čime je izvršio krivično djelo razbojnička krađa iz 
+				<ref href="/krivicni#art_241__list_1__point_1">
+					čl.241 st.1 Krivičnog zakonika Crne Gore
+				</ref>
+				.
+			</p>
+			<conclusions>
+				<p>
+					Pa
+					<organization id="osbar" referesTo="#osbar">
+						sud
+					</organization>
+					<party id="mn" refersTo="#mn" as="#defendant">
+						optuženog 
+					</party>
+					primjenom citiranih zakonskih propisa te 
+					<ref href="/krivicni#art_3">
+						čl. 3
+					</ref>
+					,
+					<ref href="/krivicni#art_4">
+						4
+					</ref>
+					,
+					<ref href="/krivicni#art_5">
+						5
+					</ref>
+					,
+					<ref href="/krivicni#art_13">
+						13
+					</ref>
+					,
+					<ref href="/krivicni#art_15">
+						15
+					</ref>
+					,
+					<ref href="/krivicni#art_32">
+						32
+					</ref>
+					,
+					<ref href="/krivicni#art_36">
+						36
+					</ref>
+					,
+					<ref href="/krivicni#art_42">
+						42
+					</ref>
+					i
+					<ref href="/krivicni#art_51">
+						51 Krivičnog zakonika Crne Gore
+					</ref>
+					, te 
+					<ref href="/postupak#art_226">
+						čl.226
+					</ref>
+					,
+					<ref href="/postupak#art_229">
+						229
+					</ref>
+					i
+					<ref href="/postupak#art_374">
+						374 Zakonika o krivičnom postupku
+					</ref>
+				</p>
+
+				<p style="text-align: center;">O SU Đ U J E</p>
+				<p>
+					Na kaznu zatvora u trajanju od 1 (jedne) godine i 6 (šest) mjeseci, u koju 
+					kaznu mu se uračunava vrijeme provedeno u pritvoru od 22.01.2021.godine u 
+					15,10 časova kao dana i časa lišenja slobode, pa nadalje.
+				</p>
+				<p>
+					Obavezuje se 
+					<party id="mn" refersTo="#mn" as="#defendant">
+						optuženi 
+					</party>
+					da oštećenom B. R. D. na ime imovinsko pravnog zahtjeva isplati iznos od 
+					160,00 eura u roku od 15 dana od pravosnažnosti presude, dok se za višak 
+					imovinsko pravnog zahtjeva oštećeni upućuje na parnični postupak.
+				</p>
+				<p>
+					Obavezuje se 
+					<party id="mn" refersTo="#mn" as="#defendant">
+						optuženi 
+					</party> 
+					da na ime troškova postupka plati u korist Budžeta Crne Gore iznos od 214,50 
+					eura, kao i iznos od 30,00 eura na ime paušala, u roku od 15 dana od 
+					pravosnažnosti presude, pod prijetnjom prinudnog izvršenja, kao i troškove 
+					koje je sud imao angažovanjem branilaca po službenoj dužnosti o kojima će 
+					odlučiti posebnim rješenjem kada se pribave podaci o tim troškovima.
+				</p>
+			</conclusions>
+		</judgmentBody>
+	</judgment>
+</akomaNtoso>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd " xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+	<judgment>
+		<meta>
+			<identification source="#court">
+				<FRBRWork>
+					<FRBRauthor>
+						Osnovni Sud u Danilovgradu
+					</FRBRauthor>
+					<FRBRdate date="2011-12-14">
+						2011-12-14
+					</FRBRdate>
+					<FRBRtitle>
+						K 29/2010
+					</FRBRtitle>
+					<FRBRcountry>
+						CG
+					</FRBRcountry>
+				</FRBRWork>
+			</identification>
+			<references>
+				<TLCOrganization eId="osdanilovgrad" href="/ontology/organization/OsnovniSud.Danilovgrad" showAs="Osnovni sud u Danilovgradu" />
+				<TLCOrganization eId="ospodgorica" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici" />
+				<TLCOrganization eId="odtpodgorica" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno državno tužilastvo iz Podgorice" />
+				<TLCOrganization eId="vskraljevo" href="/ontology/organization/VisiSud.Kraljevo" showAs="Viši sud u Kraljevu" />
+				<TLCOrganization eId="vspodgorica" href="/ontology/organization/VisiSud.Podgorica" showAs="Viši sud u Podgorici" />
+				<TLCPerson eId="vnovovic" href="/ontology/person/vnovovic" showAs="Vladimir Novovic" />
+				<TLCPerson eId="aivanovic" href="/ontology/person/aivanovic" showAs="Ana Ivanovic" />
+				<TLCPerson eId="ssisevic" href="/ontology/person/ssisevic" showAs="Snežana Šišević" />
+				<TLCPerson eId="sz" href="/ontology/person/sz" showAs="Š.Ž." />
+				<TLCPerson eId="djd" href="/ontology/person/djd" showAs="Đ.D." />
+				<TLCPerson eId="mz" href="/ontology/person/mz" showAs="M.Ž." />					
+				<TLCRole eId="plaintiff" href="/ontology/role/plaintiff" showAs="Plaintiff" />
+				<TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+				<TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+				<TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+				<TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+				<TLCRole eId="defender" href="/ontology/role/defender" showAs="Defender" />
+			</references>
+		</meta>
+		<judgmentBody>
+			<p>
+				<organization id="osdanilovgrad" referesTo="#osdanilovgrad">
+					OSNOVNI SUD U DANILOVGRADU
+				</organization>
+				, kao prvostepeni krivični, po sudiji pojedincu 
+				<party id="vnovovic" refersTo="#vnovovic" as="#judge">
+					Vladimiru Novoviću
+				</party>
+				, uz učešće
+				<party id="aivanovic" refersTo="#maivanovic" as="#clerk">
+					Ane Ivanović
+				</party>
+				, kao zapisničara, u krivičnom predmetu okrivljenog
+				<party id="sz" refersTo="#sz" as="#defendant">
+					Š.Ž.
+				</party>
+				, iz P., koga brani
+				<party id="djd" refersTo="#djd" as="#defender">
+					Đ.D.
+				</party>
+				, advokat iz P., zbog produženog krivičnog djela utaja iz
+				<ref href="/krivicni#art_243__list_1__point_2">
+					čl.243 st.2 u vezi st.1 KZ u vezi čl.49 KZ
+				</ref>
+				, odlučujući po optužnici				
+				<organization id="odtpodgorica" referesTo="#odtpodgorica">
+					Osnovnog državnog tužilaštva iz Podgorice
+				</organization>
+				Kt.br.757/09 od 30.03.2010.godine, koju je na glavnom pretresu zastupala
+				<party id="ssisevic" refersTo="#ssisevic" as="#plaintiff">
+					Snežana Šišević
+				</party>
+				, zamjenik ODT-a iz Podgorice, nakon održanog glavnog i javnog pretresa, u 
+				prisustvu zastupnika optužbe,
+				<party id="sz" refersTo="#sz" as="#defendant">
+					okrivljenog
+				</party>
+				i branioca adv.
+				<party id="mz" refersTo="#mz" as="#defender">
+					M.Ž.
+				</party>				
+				 koja je postupala po zamjeničkom punomoćju adv.
+				<party id="djd" refersTo="#djd" as="#defender">
+					Đ.D.
+				</party>
+				dana 14.12.2011.godine, donio je dana 14.12.2011.godine i istog dana javno 
+				objavio 
+			</p>
+			<p style="text-align: center;">P R E S U D U</p>
+			<p>
+				<party id="sz" refersTo="#sz" as="#defendant">
+					Okrivljeni Š.Ž.
+				</party>
+				od oca P. i majke V., rodjene K., rodjen ...godine u P., sa mjestom prebivališta u 
+				P. - ul. M. bb, državljanin Crne Gore, oženjen, otac dvoje djece, pismen, završio 
+				srednju elektrotehničku školu, vojsku služio 1994.godine u S., vodi se u vojnoj 
+				evidenciji u P., srednjeg imovnog stanja, osudjivan presudom 
+				<organization id="vskraljevo" referesTo="#vskraljevo">
+					Višeg suda u Kraljevu
+				</organization>
+ 				K.br.33/09 od 29.03.2010.godine, zbog krivičnog djela iz
+ 				<ref href="/krivicni#art_206__list_1__point_3">
+					čl.206 st.3 u vezi st.1 u vezi čl.33 KZ 
+				</ref>
+				na kaznu zatvora u trajanju od 2 godine i 6 mjeseci, a koja presuda je 
+				priznata presudom
+				<organization id="vspodgorica" referesTo="#vspodgorica">
+					Višeg suda u Podgorici
+				</organization>	
+				Kv.br.444/11 od 09.05.2011.godine, kojom je zbog krivičnog djela razbojništvo iz 
+ 				<ref href="/krivicni#art_242__list_1__point_4">
+					čl.242 st.4 u vezi st.1 u vezi čl.23 KZ 
+				</ref>			
+				osudjen na kaznu zatvora u trajanju od 2 godine i 6 mjeseci i presudom
+				<organization id="ospodgorica" referesTo="#ospodgorica">
+					Osnovnog suda u Podgorici
+				</organization>					
+				K.br.09/1177 od 12.05.2011.godine, zbog krivičnog djela prevara iz
+ 				<ref href="/krivicni#art_244__list_1__point_3">
+					čl.244 st.3 KZ 
+				</ref>
+				na kaznu zatvora u trajanju od 1 godine, 
+			</p>
+			<p style="text-align: center;">K R I V J E</p>
+			<p>Što je:</p>
+			<p> 
+				Dana 15.09.2008.godine, u P., u namjeri da sebi pribavi protivpravnu imovinsku 
+				korist prisvojio tudje pokretne stvari, koje su mu povjerene, na način što je po 
+				ovlašćenju M.M., vlasnika i izvršnog direktora oštećenog DOO "M." - N., za račun 
+				oštećenog od DOO "R." P., preuzeo 500 metara kabla PPY 5x4 mm, 500 metara kabla 
+				PPY 5x6 mm, 300 metara kabla PPY 5x10 mm, 5000 metara kabla PPY 3x1,5 mm i 4000 
+				metara kabla PPY 3x2,5 mm, koje stvari je prisvojio, dok je vrijednost utajenih 
+				stvari iznosila 7.929,00 eura.
+			</p>
+			<p>
+				Dana 23.07.2009.godine, u selu Ć., opština D., u namjeri da sebi pribavi 
+				protivpravnu imovinsku korist, prisvojio tudje pokretne stvari koje su mu 
+				povjerene, na način što je iz skladišta oštećenog DOO "M." preuzeo jedno 
+				srednjenaponsko blokovsko postrojenje RMU10kV 630 kVa sastava 2 V + 1T i 
+				niskonaponski blok 630 kVa sa 8 izvoda i javnom rasvjetom, vlasništvo oštećenog, 
+				koje stvari je prisvojio, dok je vrijednost utajenih stvari iznosila 15.537,60 eura,
+			</p>
+			<p> 
+				- čime je počinio produženo krivično djelo utaja iz
+ 				<ref href="/krivicni#art_243__list_1__point_2">
+					čl.243 st.2 u vezi st.1 KZ u vezi čl.49 KZ
+				</ref>
+				.
+			</p>
+			<conclusions>
+				<p>
+					Pa
+					<party id="sz" refersTo="#sz" as="#defendant">
+						ga
+					</party>
+					<organization id="osdanilovgrad" referesTo="#osdanilovgrad">
+						sud
+					</organization>
+					primjenom citiranih zakonskih propisa, te
+					<ref href="/krivicni#art_4">
+						čl.4
+					</ref>
+					,
+					<ref href="/krivicni#art_5">
+						5
+					</ref>
+					,
+					<ref href="/krivicni#art_15">
+						15
+					</ref>
+					,
+					<ref href="/krivicni#art_32">
+						32
+					</ref>
+					,
+					<ref href="/krivicni#art_36">
+						36
+					</ref>
+					i
+					<ref href="/krivicni#art_42">
+						42 KZ 
+					</ref> 
+					i 
+					<ref href="/postupak#art_226">
+						čl 226
+					</ref>
+					,
+					<ref href="/postupak#art_229">
+						229
+					</ref>
+					i
+					<ref href="/postupak#art_374">
+						374 ZKP-a
+					</ref>
+				</p>
+
+				<p style="text-align: center;">O S U Đ U J E</p>
+				
+				<p>Na kaznu zatvora u trajanju od 1 (jedne) godine.</p>
+				<p>
+					Dužan je
+					<party id="sz" refersTo="#sz" as="#defendant">
+						okrivljeni
+					</party>
+					da na ime troškova krivičnog postupka uplati ovom
+					<organization id="osdanilovgrad" referesTo="#osdanilovgrad">
+						sudu
+					</organization>
+					iznos od 66,00 eura i po osnovu sudskog paušala iznos od 30,00 eura, a sve u 
+					roku od 15 dana po pravosnažnosti presude. 
+				</p>
+				<p> 
+					Na osnovu
+					<ref href="/postupak#art_239__list_1__point_2">
+						čl.239 st.2 ZKP-a 
+					</ref>
+					obavezuje se
+					<party id="sz" refersTo="#sz" as="#defendant">
+						okrivljeni
+					</party>
+					 da na ime imovinsko-pravnog zahtjeva uplati oštećenom DOO "M." N. iznos od 
+					 23.466,60 eura, a u roku od 15 dana po pravosnažnosti presude.
+				</p>
+			</conclusions>
+		</judgmentBody>
+	</judgment>
+</akomaNtoso>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd " xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+	<judgment>
+		<meta>
+			<identification source="#court">
+				<FRBRWork>
+					<FRBRauthor>
+						Osnovni Sud u Podgorici
+					</FRBRauthor>
+					<FRBRdate date="2011-03-25">
+						2011-03-25
+					</FRBRdate>
+					<FRBRtitle>
+						K 772/2010
+					</FRBRtitle>
+					<FRBRcountry>
+						CG
+					</FRBRcountry>
+				</FRBRWork>
+			</identification>
+			<references>
+				<TLCOrganization eId="oskolasin" href="/ontology/organization/OsnovniSud.Kolašin" showAs="Osnovni sud u Kolašinu" />
+				<TLCOrganization eId="ospodgorica" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni Sud u Podgorici" />
+				<TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo" showAs="Osnovno državno tužilaštvo" />
+				<TLCPerson eId="smugosa" href="/ontology/person/smugosa" showAs="Suzana Mugoša" />
+				<TLCPerson eId="msekulic" href="/ontology/person/msekulic" showAs="Marina Sekulić" />
+				<TLCPerson eId="mdjurasovic" href="/ontology/person/mdjurasovic" showAs="Đurasović Miroslava" />
+				<TLCPerson eId="mkovacevic" href="/ontology/person/mkovacevic" showAs="Kovačević Milijane" />
+				<TLCPerson eId="aradovic" href="/ontology/person/aradovic" showAs="Radović Ana" />
+				<TLCPerson eId="vm" href="/ontology/person/vm" showAs="V.M." />
+				<TLCPerson eId="gm" href="/ontology/person/gm" showAs="G.M." />
+				<TLCRole eId="plaintiff" href="/ontology/role/plaintiff" showAs="Plaintiff" />
+				<TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+				<TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+				<TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+				<TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+				<TLCRole eId="defender" href="/ontology/role/defender" showAs="Defender" />
+			</references>
+		</meta>
+		<judgmentBody>
+			<p>
+				<organization id="ospodgorica" referesTo="#ospodgorica">
+					OSNOVNI SUD U PODGORICI
+				</organization>
+				, kao prvostepeni krivični, u vijeću sastavljenom od 
+				<party id="smugosa" refersTo="#smugosa" as="#judge">
+					sudije Suzane Mugoše
+				</party>
+				., kao predsjednika vijeća i sudija porotnika 
+				<party id="mdjurasovic" refersTo="#mdjurasovic" as="#judge">
+					Đurasović Miroslava 
+				</party>
+				i 
+				<party id="mkovacevic" refersTo="#mkovacevic" as="#judge">
+					Kovačević Milijane
+				</party>
+				, kao članova vijeća, uz učešće 
+				<party id="msekulic" refersTo="#msekulic" as="#clerk">
+					Marine Sekulić 
+				</party>
+				kao zapisničara, u krivičnom predmetu protiv optuženog  
+				<party id="vm" refersTo="#vm" as="#defendant">
+					V.M. 
+				</party> 
+				zbog krivičnog djela razbojnička krađa iz 
+				<ref href="/krivicni#art_241__list_1__point_2">
+					čl. 241 st. 2 u vezi st. 1 KZ-a
+				</ref>
+				, odlučujući po optužnici  
+				<organization id="odt" referesTo="#odt">
+					ODT-a Podgorica
+				</organization>
+				Kt. br. 1003/08 od 10.10.2008. godine, nakon održanog glavnog, javnog pretresa dana 25.03.2011. godine, u prisustvu zastupnika optužbe 
+				<party id="aradovic" refersTo="#aradovic" as="#plaintiff">
+					Radović Ane
+				</party>
+				i  – zamjenika ODT-a,  
+				<party id="vm" refersTo="#vm" as="#defendant">
+					optuženog 
+				</party>
+				i njegovog branioca adv. 
+				<party id="gm" refersTo="#gm" as="#defender">
+					G.M. 
+				</party>
+				i oštećene, nakon tajnog vijećanja i glasanja, donio je, a dana 30.03.2011. godine javno objavio
+			</p>
+			<p style="text-align: center;">P R E S U D U</p>
+			<p>Optuženi:</p>
+			<p>
+				<party id="vm" refersTo="#vm" as="#defendant">
+					V.M.
+				</party>
+				, od oca D. i majke L., rođene V., rođen ... godine u P., sa prebivalištem u P., 
+				državljanin Crne Gore, završio srednju školu, zaposlen, oženjen, otac dvoje 
+				maloljetne djece, srednjeg imovnog stanja, osuđivan presudom 
+				<organization id="oskolasin" referesTo="#oskolasin">
+					Osnovnog suda u Kolašinu 
+				</organization>
+				, K. br. 195/08 od 20.01.2009. godine za krivično djelo iz 
+				<ref href="/krivicni#art_276__list_1__point_3">
+					čl. 376 st. 3/st. 1 i 2 KZ-a 
+				</ref>
+				– 2 mjeseca zatvora, uslovna osuda 1 godina
+			</p>
+			<p style="text-align: center;">K R I V J E</p>
+			<p>Zato što je:</p>
+
+			<p>
+				Dana 26.06.2008. godine u DOO „F.“, u mjestu G., opština P., na djelu krađe zatečen, 
+				pa u namjeri da ukradenu stvar zadrži, upotrijebio silu protiv oštećene O.A., na način 
+				što je iz ladice za pultom, u kojoj se nalazila sveska sa novcem od dnevnog pazara, 
+				brzo otvorio ladicu, zgrabio svesku sa novcem u iznosu od 7.800 €, pa kada je radnica 
+				u navedenom klubu, oštećena O.A., pokušala da spriječi  
+				<party id="vm" refersTo="#vm" as="#defendant">
+					optuženog 
+				</party>
+				da oduzme novac, hvatajući rukama svesku, istu je odgurnuo laktom, pokušavajući da je 
+				ugrize za ruku, nakon čega joj je oteo svesku sa pazarom i dao se u bjekstvo,
+			</p>
+			<p>
+				- čime je izvršio krivično djelo razbojnička krađa iz 
+				<ref href="/krivicni#art_241__list_1__point_2">
+					čl. 241 st. 2 u vezi st. 1 KZ-a
+				</ref>
+				,
+			</p>
+
+			<conclusions>
+				<p>
+					Pa ga 
+					<organization id="ospodgorica" referesTo="#ospodgorica">
+						sud 
+					</organization>
+					primjenom  citiranih zakonskih odredbi, te 
+					<ref href="/krivicni#art_3">
+						čl. 3
+					</ref>
+					, 
+					<ref href="/krivicni#art_4">
+						4
+					</ref>
+					, 
+					<ref href="/krivicni#art_5">
+						5
+					</ref>
+					, 
+					<ref href="/krivicni#art_15">
+						15
+					</ref>
+					, 
+					<ref href="/krivicni#art_32">
+						32
+					</ref>
+					, 
+					<ref href="/krivicni#art_36">
+						36
+					</ref>
+					, 
+					<ref href="/krivicni#art_42">
+						42
+					</ref>
+					, 
+					<ref href="/krivicni#art_45">
+						45
+					</ref> 
+					i 
+					<ref href="/postupak#art_199">
+						čl. 199 
+					</ref>
+					, 
+					<ref href="/postupak#art_202">
+						202
+					</ref>
+					, 
+					<ref href="/postupak#art_212">
+						212 
+					</ref> 
+					i 
+					<ref href="/postupak#art_364">
+						364 ZKP-a
+					</ref>
+					, 
+				</p>
+
+				<p style="text-align: center;">OSUĐUJE</p>
+
+				<p>Na kaznu zatvora u trajanju od 6 (šest mjeseci).</p>
+				<p>
+					<party id="vm" refersTo="#vm" as="#defendant">
+						Optuženi 
+					</party> 
+					se obavezuje da oštećenom DOO „F.“ iz P. na ime imovinsko 
+					pravnog zahtjeva plati iznos od 1.800 €.
+				</p>
+				<p>
+					<party id="vm" refersTo="#vm" as="#defendant">
+						Optuženi 
+					</party>  
+					je dužan da na ime troškova krivičnog postupka plati ovom sudu novčani iznos 
+					od 50 € na ime sudskog paušala, u roku od 15 dana od dana pravosnažnosti 
+					presude pod prijetnjom prinudnog izvršenja.
+				</p>
+
+			</conclusions>
+		</judgmentBody>
+	</judgment>
+</akomaNtoso>

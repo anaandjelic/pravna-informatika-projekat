@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd " xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+	<judgment>
+		<meta>
+			<identification source="#court">
+				<FRBRWork>
+					<FRBRauthor>
+						Osnovni Sud u Kotoru
+					</FRBRauthor>
+					<FRBRdate date="2022-9-30">
+						2022-9-30
+					</FRBRdate>
+					<FRBRtitle>
+						K 108/2022
+					</FRBRtitle>
+					<FRBRcountry>
+						CG
+					</FRBRcountry>
+				</FRBRWork>
+			</identification>
+			<references>
+				<TLCOrganization eId="osk" href="/ontology/organization/OsnovniSud.Kotor" showAs="Osnovni sud u Kotoru" />
+				<TLCOrganization eId="odtkotor" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Kotor" showAs="Osnovno državno tužilaštvo u Kotoru" />
+
+				<TLCPerson eId="ds" href="/ontology/person/ds" showAs="D.S." />
+				<TLCPerson eId="vp" href="/ontology/person/vp" showAs="V.P." />
+				<TLCPerson eId="djv" href="/ontology/person/djv" showAs="Đ.V." />
+				<TLCPerson eId="zp" href="/ontology/person/zp" showAs="Ž.P." />
+				<TLCPerson eId="mf" href="/ontology/person/mf" showAs="M.F." />
+
+				<TLCRole eId="plaintiff" href="/ontology/role/plaintiff" showAs="Plaintiff" />
+				<TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+				<TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+				<TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+				<TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+				<TLCRole eId="defender" href="/ontology/role/defender" showAs="Defender" />
+			</references>
+		</meta>
+		<judgmentBody>
+			<p>
+				<organization id="osk" referesTo="#osk">
+					Osnovni sud u K.
+				</organization>
+				, sudija 
+				<party id="ds" refersTo="#ds" as="#judge">
+					D.S.
+				</party>
+				, uz učešće zapisničarke
+				<party id="vp" refersTo="#vp" as="#clerk">
+					V.P.
+				</party>
+				u krivičnom postupku protiv okrivljenog
+				<party id="djv" refersTo="#djv" as="#defendant">
+					Đ.V.
+				</party>
+				 , zbog krivičnog djela razbojništvo iz člana
+				<ref href="/krivicni#art_242__list_1__point_1">
+					čl.242 st.1 KZCG
+				</ref>
+				, koji se vodi po optužnici 
+				<organization id="odtkotor" referesTo="#odtkotor">
+					ODT-a K.
+				</organization>
+				Kt.br. 166/22 od 04.05.2022 g., nakon glavnog i javnog pretresa održanog dana 
+				23.09.2022 g., u prisustvu državnog tužioca iz
+				<organization id="odtkotor" referesTo="#odtkotor">
+					ODT K.
+				</organization>
+				<party id="zp" refersTo="#zp" as="#plaintiff">
+					Ž.P.
+				</party>
+				,
+				<party id="djv" refersTo="#djv" as="#defendant">
+					Đ.V.
+				</party>
+				njegovog branioca
+				<party id="mf" refersTo="#mf" as="#defender">
+					M.F.
+				</party>
+				,donio je i javno objavio dana 30.09.2022.g. sljedeću 
+			</p>
+			<p style="text-align: center;">P R E S U D U</p>
+			<p>
+				<party id="djv" refersTo="#djv" as="#defendant">
+					Okrivljeni Đ.V.
+				</party>
+				, JMB 31...., od oca Ž. i majke R., rođene Š., rođen 31.07.1998.g. u B., stalno 
+				nastanjen u P., N. A. 32, državljanin CG, vatrogasac, neoženjen, bez djece, sa 
+				završenom SSS, srednjeg imovnog stanja, ranije osuđivan presudom O. suda u K. 
+				K.br.180/20/20 od 06.08.2020 g.zbog krivičnog djela nepostupanje po zdravstvenim 
+				propisima za suzbijanje opasne zarazne bolesti iz 
+				<ref href="/krivicni#art_287">
+					člana 287 KZ CG 
+				</ref>	
+				novčanom kaznom u iznosu od 200 € i presudom
+				<organization id="osk" referesTo="#osk">
+					O. suda u K.
+				</organization>	
+				K.21/20/20 od 26.06.2020 g. zbog krivičnog djela iz 
+				<ref href="/krivicni#art_152__list_1__point_2">
+					člana 152 st.2 
+				</ref>	
+				u vezi
+				<ref href="/krivicni#art_152__list_1__point_1">
+					st.1 KZ CG
+				</ref>						
+				, kojom mu je izrečena mjera upozorenja, protiv kojeg se ne vodi krivični 
+				postupak za neko drugo krivično djelo. 
+			</p>
+			<p style="text-align: center;">K R I V J E</p>
+			<p>
+				Što je Dana 05.04.2022.g., oko 04:14h, u ulici Ž.f., u neposrednoj blizini hotela 
+				„E.“ u B., u namjeri da prisvajanjem tuđih pokretnih stvari za sebe pribavi 
+				protivpravnu imovinsku korist, upotrebom sile protiv oštećenog B.B. iz R., otuđio 
+				njegovu torbicu u kojoj se nalazio novčanik sa novcem u iznosu od 180,00 €, 
+				bankovnim karticama, pasošem oštećenog, ukupne utvrđene vrijednosti od 109,28 €, 
+				na način što se neposredno prije toga kretao automobilom marke „Golf V“ reg.oznaka 
+				BR CH 368, tom ulicom, gdje se na mjestu suvozača nalazilo lice A.M., pa kada je 
+				uočio oštećenog koji je pješke išao ka naselju B.D.,polukružno se okrenuo kod 
+				prodavnice „M.M.“ u toj ulici, vratio se, zaustavio automobil, izašao iz istog, 
+				prišao oštećenom, zatim mu zadao udarac stisnutom pesnicom u predjelu brade, od 
+				kojeg udarca je oštećeni pao, nakon čega je od njega oduzeo gore navedenu torbicu, 
+				koju je oštećeni nosio sa sobom, ušao u automobil i napustio lice mjesta u pravcu 
+				D.ulice, pri čemu je bio uračunljiv i svjestan svoga djela i njegove zabranjenosti
+				, a čije izvršenje je htio 
+			</p>
+			<p>
+				- čime je učinio krivično djelo razbojništva iz
+				<ref href="/krivicni#art_242__list_1__point_1">
+					čl.242 st.1 KZCG
+				</ref>			
+			</p>			 
+			<conclusions>
+				<p>
+					Pa
+					<organization id="osk" referesTo="#osk">
+						sud
+					</organization>
+					<party id="djv" refersTo="#djv" as="#defendant">
+						okrivljenog Đ.V.
+					</party>
+					na osnovu naprijed navedene krivičnopravne odredbe, te odredbi
+					<ref href="/krivicni#art_3">
+						čl.3
+					</ref>
+					,
+					<ref href="/krivicni#art_5">
+						5
+					</ref>
+					,
+					<ref href="/krivicni#art_8">
+						8
+					</ref>
+					,
+					<ref href="/krivicni#art_13">
+						13
+					</ref>
+					,
+					<ref href="/krivicni#art_15">
+						15
+					</ref>
+					,
+					<ref href="/krivicni#art_32">
+						32
+					</ref>
+					,
+					<ref href="/krivicni#art_36">
+						36
+					</ref>
+					,
+					<ref href="/krivicni#art_36_a">
+						36a
+					</ref>
+					,
+					<ref href="/krivicni#art_42">
+						42
+					</ref>
+					,
+					<ref href="/krivicni#art_45">
+						45
+					</ref>
+					i
+					<ref href="/krivicni#art_46">
+						46 KZCG
+					</ref>
+					, te
+					<ref href="/postupak#art_226">
+						čl. 226
+					</ref>
+					,
+					<ref href="/postupak#art_229">
+						čl. 229
+					</ref>
+					,
+					<ref href="/postupak#art_374">
+						čl. 374 KZCG
+					</ref>
+					.. 
+				</p>
+				<p style="text-align: center;">O S U Đ U J E</p>
+				<p>
+					 Na kaznu zatvora u trajanju od 6 (šest) mjeseci, koju će 
+					<party id="djv" refersTo="#djv" as="#defendant">
+						okrivljeni 
+					</party>
+					izdržati nakon pravosnažnosti presude, s tim što se istovremeno određuje da će 
+					se ova kazna izvršiti tako što će je isti izdržavati u prostorijama u kojima 
+					stanuje u P., N.A. 32.
+				</p>
+				<p>
+					<party id="djv" refersTo="#djv" as="#defendant">
+						Okrivljeni
+					</party>
+					kome je određeno izvršenje kazne zatvora u prostorijama u kojima stanuje, ne 
+					smije napuštati prostorije u kojima stanuje, osim u slučajevima propisanim Z
+					akonom kojim se uređuje izvršenje krivičnih sankcija. Ukoliko
+					<party id="djv" refersTo="#djv" as="#defendant">
+						osuđeni
+					</party>					
+					 jednom u trajanju preko 6 časova, ili dva puta u trajanju do 6 časova 
+					 samovoljno napusti prostorije u kojima stanuje sud će odrediti da ostatak 
+					 kazne zatvora izdrži u Zavodu za izvršenje krivičnih sankcija. 
+				</p>
+				<p>
+					Dužan je 
+					<party id="djv" refersTo="#djv" as="#defendant">
+						okrivljeni
+					</party>
+					na ime sudskog paušala uplatiti iznos od 50,00 € i na ime troškova krivičnog 
+					postupka iznos od 77,00 € u korist budžeta CG, na žiro račun broj 832-16-52 u 
+					roku od mjesec dana od dana pravosnažnosti presude i dokaz o uplati dostaviti
+					<organization id="osk" referesTo="#osk">
+						ovom sudu
+					</organization>
+					s pozivom na broj K.108/22/22. 
+				</p>
+				<p>
+					Obavezuje se 
+					<party id="djv" refersTo="#djv" as="#defendant">
+						okrivljeni
+					</party> 
+					da oštećenom B.B. na ime imovinsko pravnog zahjtjeva isplati iznos od 289,28 € 
+					u roku od dva mjeseca od dana pravosnažnosti presude, pod prijetnjom prinudnog 
+					izvršenja.
+				</p>					 
+			</conclusions>
+		</judgmentBody>
+	</judgment>
+</akomaNtoso>
