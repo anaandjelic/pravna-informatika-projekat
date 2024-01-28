@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd " xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+	<judgment>
+		<meta>
+			<identification source="#court">
+				<FRBRWork>
+					<FRBRauthor>
+						Osnovni Sud u Baru
+					</FRBRauthor>
+					<FRBRdate date="2020-6-19">
+						2020-6-19
+					</FRBRdate>
+					<FRBRtitle>
+						K 96/2020
+					</FRBRtitle>
+					<FRBRcountry>
+						CG
+					</FRBRcountry>
+				</FRBRWork>
+			</identification>
+			<references>
+				<TLCOrganization eId="osbar" href="/ontology/organization/OsnovniSud.Bar" showAs="Osnovni sud u Baru" />
+				<TLCOrganization eId="odtbar" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Bar" showAs="Osnovno državno tužilaštvo u Baru" />
+
+				<TLCPerson eId="tspasojevic" href="/ontology/person/tspasojevic" showAs="Tamara Spasojević" />
+				<TLCPerson eId="astanisic" href="/ontology/person/astanisic" showAs="Ana Stanišić" />
+				<TLCPerson eId="il" href="/ontology/person/il" showAs="I.L." />
+				<TLCPerson eId="rdjurisic" href="/ontology/person/rdjurisic" showAs="Radovan Đurišić" />
+				<TLCPerson eId="mb" href="/ontology/person/mb" showAs="M.B." />
+
+				<TLCRole eId="plaintiff" href="/ontology/role/plaintiff" showAs="Plaintiff" />
+				<TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+				<TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+				<TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+				<TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+				<TLCRole eId="defender" href="/ontology/role/defender" showAs="Defender" />
+			</references>
+		</meta>
+		<judgmentBody>
+			<p>
+				<organization id="osbar" referesTo="#osbar">
+					OSNOVNI SUD U BARU
+				</organization>
+				, sudija 
+				<party id="tspasojevic" refersTo="#tspasojevic" as="#judge">
+					Tamara Spasojević
+				</party>
+				, sa zapisničarom 
+				<party id="astanisic" refersTo="#astanisic" as="#clerk">
+					Anom Stanišić
+				</party>
+				, u krivičnom predmetu optuženog
+				<party id="il" refersTo="#il" as="#defendant">
+					I. L.
+				</party>
+				 , zbog produženog krivičnog djela - razbojništvo iz 
+				<ref href="/krivicni#art_242__list_1__point_1">
+					čl.242 st.1 Krivičnog zakonika Crne Gore u vezi čl.20 
+				</ref>
+				i 
+				<ref href="/krivicni#art_49">
+					čl.49 Krivičnog Zakonika Crne Gore 
+				</ref>
+				po optužnici
+				<organization id="odtbar" referesTo="#odtbar">
+					Osnovnog državnog tužilaštva u Baru
+				</organization>
+				Kt.br. 524/19 od 03.03.2020. godine, nakon održanog glavnog i javnog pretresa 
+				dana 17.06.2020.godine u prisustvu zastupnika optužbe, rukovodioca
+				<organization id="odtbar" referesTo="#odtbar">
+					državnog tužilaštva u Baru
+				</organization>	
+				<party id="rdjurisic" refersTo="#rdjurisic" as="#plaintiff">
+					Radovan Đurišića
+				</party>	
+				,
+				<party id="il" refersTo="#il" as="#defendant">
+					optuženog 
+				</party>				
+				i njegovog branioca
+				<party id="mb" refersTo="#mb" as="#defender">
+					M. B.
+				</party>
+				, advokata iz B. dana 19.06.2020.godine donio je i javno objavio 
+			</p>
+				<p style="text-align: center;">P R E S U D U</p>
+			<p>Optuženi,</p>
+			<p>
+				<party id="il" refersTo="#il" as="#defendant">
+					 I. L.
+				</party>
+				(JMBG ...... ), od oca D. i majke B., rođene B., rođen ... .godine u B., sa 
+				prebivalištem u B. – ulica ... , državljanin C. G. , radnik, lošeg imovnog 
+				stanja, neosuđivan, 
+			</p>
+			<p style="text-align: center;">K R I V J E</p>
+			<p>
+				Zato što je, 
+			</p>
+			<p>
+				Dana 25.08.2019. godine, oko 22,00 časova, u Baru, svjestan svog djela čije je 
+				izvršenje htio, znajući da je njegovo djelo zabranjeno, u namjeri da sebi pribavi 
+				protivpravnu imovinsku korist, ušao u kladionicu „V.“ - u ulici ..... u B., 
+				maskiran kačketom i majicom stavljenom preko lica, držeći u ruci nož sječiva oko 
+				15 cm, a zatim prijetnjom nožem da će neposredno napasti na život ili tijelo 
+				radnice T. J., od nje je zatražio da mu preda novac, što je ona i učinila i 
+				predala mu novac u iznosu od 175,00 eura, čime je sebi pribavio korist u 
+				označenom iznosu, 
+			</p>
+			<p>
+				Dana 29.12.2019. godine, oko 19,30 časova, u Baru, svjestan svog djela 
+				čije izvršenje je htio, znajući da je njegovo djelo zabranjeno, u namjeri da sebi 
+				pribavi protivpravnu imovinsku korist, ušao u kladionicu „M.“ u ulici ...... 
+				u B., maskiran kapom – „fantomkom“ preko lica, držeći u ruci nož – skalpel 
+				dužine sječiva oko 5 cm, prijetnjom da će neposredno napasti na život ili 
+				tijelo radnice M. A., govoreći joj „Daj pare, vadi pare“, a kako je radnica 
+				to odbila, on prilazi iza pulta pokušavajući da otvori zaključanu ladicu od 
+				kase u čemu ne uspijeva, pa se udaljava iz kladionice, da bi nakon toga u 
+				21,56 časova ušao u sportsku kladionicu ’’A. ’’ u ulici .... u B., maskiran 
+				kapom - ’’fantomkom’’ preko lica, držeći u ruci nož – skalpel dužine sječiva 
+				oko 5 cm, a zatim prijetnjom nožem da će neposredno napasti na život ili 
+				tijelo radnice A. K. , govoreći joj ’’Daj pare, vadi pare’’, što je ona i 
+				učinila i predala mu novac u iznosu od 185,00 eura u raznim apoenima, čime 
+				je sebi pribavio korist u označenom iznosu, 
+			</p>
+			<p>
+				- čime je izvršio produženo 
+				krivično djelo – razbojništvo iz 
+				<ref href="/krivicni#art_242__list_1__point_1">
+					čl.242 st.1 u vezi čl.20 
+				</ref>
+				i 
+				<ref href="/krivicni#art_49">
+					čl.49 Krivičnog Zakonika Crne Gore
+				</ref>
+			</p>			 
+			<conclusions>
+				<p>
+					Pa
+					<party id="il" refersTo="#il" as="#defendant">
+						ga
+					</party>
+					<organization id="osbar" referesTo="#osbar">
+						sud
+					</organization>
+					 primjenom citiranog zakonskog propisa, te
+					<ref href="/krivicni#art_2">
+						čl.2
+					</ref>
+					,
+					<ref href="/krivicni#art_4">
+						4
+					</ref>
+					,
+					<ref href="/krivicni#art_5">
+						5
+					</ref>
+					,
+					<ref href="/krivicni#art_13">
+						13
+					</ref>
+					,
+					<ref href="/krivicni#art_15">
+						15
+					</ref>
+					,
+					<ref href="/krivicni#art_32">
+						32
+					</ref>
+					,
+					<ref href="/krivicni#art_36">
+						36
+					</ref>
+					,
+					<ref href="/krivicni#art_36_a">
+						36a
+					</ref>
+					,
+					<ref href="/krivicni#art_42">
+						42
+					</ref>
+					,
+					<ref href="/krivicni#art_45">
+						45
+					</ref>
+					i
+					<ref href="/krivicni#art_46">
+						46 Krivičnog zakonika Crne Gore 
+					</ref>
+					te
+					<ref href="/postupak#art_226">
+						čl. 226
+					</ref>
+					,
+					<ref href="/postupak#art_229">
+						čl. 229
+					</ref>
+					,
+					<ref href="/postupak#art_374">
+						čl. 374 Zakonika o krivičnom postupku 
+					</ref>
+				</p>
+				<p style="text-align: center;">O S U Đ U J E</p>
+				<p>
+					Na kaznu zatvora u trajanju od 6 (šest) mjeseci i istovremeno određuje da će 
+					se ova kazna nakon pravnosnažnosti presude izvršiti tako što će je 
+					<party id="il" refersTo="#il" as="#defendant">
+						optuženi 
+					</party> 
+					izdržavati u prostorijama u kojima stanuje.
+				</p>
+				<p>
+					<party id="il" refersTo="#il" as="#defendant">
+						Optuženi 
+					</party>
+					ne smije napustiti prostoriju u kojoj stanuje, osim u slučajevima propisanim 
+					zakonom kojima se uređuje izvršenje krivičnih sankcija. Ukoliko 
+					<party id="il" refersTo="#il" as="#defendant">
+						optuženi 
+					</party> 
+					jednom u trajanju preko šest časova ili dva puta u trajanju do šest časova 
+					samovoljno napusti prostorije u kojima stanuje, sud će odrediti da ostatak 
+					kazne zatvora izdrži u Zavodu za izvršenju krivičnih sankcija. 
+				</p>
+				<p>
+					<party id="il" refersTo="#il" as="#defendant">
+						Optuženi
+					</party> 
+					je dužan da na ime imovinsko pravnog zahtjeva u vidu naknade štete oštećenoj 
+					sportskoj kladionici „ M. - A. “ isplati iznos od 160,00 €, a oštećenoj 
+					sportskoj kladionici „V. – V.“ iznos od 175,00 eura, dok se sportska kladionica 
+					„V. – V.“ za preostali dio do traženog iznosa od 186,30 eura upućuje na 
+					parnični postupak.
+				</p>
+				<p>
+					<party id="il" refersTo="#il" as="#defendant">
+						Optuženi
+					</party>
+					je dužan da plati troškove krivičnog postupka u iznosu od 50,00 eura na ime 
+					sudskog paušala u roku od 15 dana po pravosnažnosti presude, pod prijetnjom 
+					prinudnog izvršenja, dok će se o troškovima branioca po službenoj dužnosti, 
+					<party id="mb" refersTo="#mb" as="#defender">
+						adv. M. B.
+					</party>
+					odlučiti posebnim rješenjem.			
+				</p>
+			</conclusions>
+		</judgmentBody>
+	</judgment>
+</akomaNtoso>

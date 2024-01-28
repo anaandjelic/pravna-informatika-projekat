@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd " xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+	<judgment>
+		<meta>
+			<identification source="#court">
+				<FRBRWork>
+					<FRBRauthor>
+						Viši Sud u Podgorici
+					</FRBRauthor>
+					<FRBRdate date="2013-11-21">
+						2013-11-21
+					</FRBRdate>
+					<FRBRtitle>
+						K 82/2013
+					</FRBRtitle>
+					<FRBRcountry>
+						CG
+					</FRBRcountry>
+				</FRBRWork>
+			</identification>
+			<references>
+				<TLCOrganization eId="vspodgorica" href="/ontology/organization/VisiSud.Podgorica" showAs="Viši Sud u Podgorici" />
+				<TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo" showAs="Osnovno državno tužilaštvo" />
+				<TLCPerson eId="smugosa" href="/ontology/person/smugosa" showAs="Suzana Mugoša" />
+				<TLCPerson eId="svukicevic" href="/ontology/person/svukicevic" showAs="Vukčević Snežana" />
+				<TLCPerson eId="vpean" href="/ontology/person/vpean" showAs="Pean Vesna" />
+				<TLCPerson eId="llakic" href="/ontology/person/llakic" showAs="Ljiljana Lakić" />
+				<TLCPerson eId="le" href="/ontology/person/le" showAs="L. E." />
+				<TLCPerson eId="nr" href="/ontology/person/nr" showAs="N. R." />
+				<TLCRole eId="plaintiff" href="/ontology/role/plaintiff" showAs="Plaintiff" />
+				<TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+				<TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+				<TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+				<TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+				<TLCRole eId="defender" href="/ontology/role/defender" showAs="Defender" />
+			</references>
+		</meta>
+		<judgmentBody>
+			<p>
+				<organization id="vspodgorica" referesTo="#vspodgorica">
+					VIŠI  SUD U PODGORICI
+				</organization>
+				kao prvostepeni krivični, u vijeću sastavljenom od sudije 
+				<party id="smugosa" refersTo="#smugosa" as="#judge">
+					Suzane Mugoše
+				</party>
+				, kao predsjednika vijeća i sudija 
+				<party id="svukicevic" refersTo="#smugosa" as="#judge">
+					Vukčević Snežane 
+				</party>
+				i 
+				<party id="vpean" refersTo="#vpean" as="#judge">
+					Pean Vesne
+				</party>
+				, kao članova vijeća, u krivičnom predmetu protiv optuženog 
+				<party id="le" refersTo="#le" as="#defendant">
+					L. E.
+				</party> 
+				iz P, kojeg brani adv. 
+				<party id="nr" refersTo="#nr" as="#defender">
+					N. R.
+				</party>
+				, zbog krivičnog djela razbojnička kradja iz 
+				<ref href="/krivicni#art_241__list_1__point_4">
+					čl. 241 st.4 u vezi st.1 Krivičnog zakonika 
+				</ref>
+				odlučujući po optužnici  
+				<organization id="odt" referesTo="#odt">
+					Višeg državnog tužilaštva u Podgorici
+				</organization>
+				Kt.br. 37/13 od 11.06.2013.godine koju je na glavnom pretresu zastupala 
+				<party id="llakic" refersTo="#llakic" as="#plaintiff">
+					Ljiljana Lakić
+				</party>
+				zamjenik VDT-a u Podgorici, nakon održanog glavnog i javnog pretresa, dana 21.11.2013. godine, u prisustvu 
+				<party id="le" refersTo="#le" as="#defendant">
+					optuženog 
+				</party>
+				, donio je i javno objavio dana 27.11.2013.godine  
+			</p>
+			<p style="text-align: center;">P R E S U D U</p>
+			<p>Optuženi:</p>
+			<p>
+				<party id="le" refersTo="#le" as="#defendant">
+					L. E.
+				</party>
+				, zvani "Edi", od oca B. i majke M., rodjena V., rodjen ....... godine, u B., 
+				u I., sa prebivalištem u P, V. R., kamp I, bez državljanstva, nezaposlen, 
+				neoženjen, završio dva razreda osnovne škole, lošeg imovnog stanja, u pritvoru 
+				od 18.03.2013. godine.
+			</p>
+			<p style="text-align: center;">K r i v j e</p>
+			<p>Zato što je:</p>
+
+			<p>
+				Dana 15.03.2013. godine u P., u ulici H. broj 48, u dvorištu kuće oštećenog 
+				Z. Z., zajedno sa izvjesnim E., na djelu kradje zatečeni, u namjeri da ukradenu 
+				stvar zadrže, upotrijebili silu prema oštećenim Z. Z. i Z. N, iako su bili 
+				svjesni zabranjenosti svojih radnji, pa su to i htjeli, na način što je 
+				
+				<party id="le" refersTo="#le" as="#defendant">
+					okrivljeni L. E. 
+				</party> 
+				navedenog dana došao kod oštećenog Z. Z. i od istog tražio novac, a kada je 
+				oštećeni to odbio, dok su se nalazili u dvorištu kuće, iskoristio trenutak 
+				dok mu je oštećeni bio okrenut ledjima i iz zadnjeg džepa pantalona mu oduzeo 
+				novčanik, u kojem se nalazila novčanica u iznosu od 50,00€, a kada je oštećeni 
+				to primijetio i pokušao da ga spriječi u bjekstvu uhvativši ga za ruku, iz kuće 
+				je izašao brat oštećenog Z. Z.- Z. N., kojeg je 
+				<party id="le" refersTo="#le" as="#defendant">
+					okrivljeni L. 
+				</party>  
+				udario nogom u predjelu stomaka, od kojeg udarca je Z. N. pao na betonsku podlogu, 
+				kada je 
+				<party id="le" refersTo="#le" as="#defendant">
+					okrivljeni L. 
+				</party> 
+				pozvao izvjesnog E., koji je ušao u dvorište kuće i udario prvo oštećenog Z. N. 
+				nogom u predjelu grudi a potom više puta pesnicama u predjelu glave oštećenog 
+				Z. Z., nakon čega su 
+				<party id="le" refersTo="#le" as="#defendant">
+					okrivljeni L. E. 
+				</party> 
+				i  izvjesni E. više puta nogama i rukama udarili oštećenog Z. N. u predjelu glave 
+				i tijela, kojom prilikom su Z. Z. nanijeli lake tjelesne povrede u vidu tri 
+				krvna podliva kože i to u predjelu čela, korijena nosa i u predjelu lijeve 
+				strane donje vilice a Z. N. teške tjelesne povrede u vidu, pukotinastog preloma 
+				čeone kosti u predjelu prednjeg zida lijeve šupljine čeone kosti, prelom kostiju 
+				poda lijeve očne duplje na spoju lijeve gornje vilične i lijeve jagodične kosti, 
+				prelom lijeve gornje vilične kosti u predjelu prednjeg zida šupljine lijeve 
+				gornjovilične kosti i krvarenje-prisustvo krvi u prostoru ispod tvrde moždanice 
+				u lijevom sljepoočnom predjelu, nakon čega su 
+				<party id="le" refersTo="#le" as="#defendant">
+					okrivljeni 
+				</party> 
+				i izvjesni E. pobjegli sa lica mjesta.
+			</p>
+			<p>
+				- čime je izvršio krivično djelo - razbojnička kradja iz 
+				<ref href="/krivicni#art_241__list_1__point_4">
+					čl. 241 st.4 u vezi st.1Krivičnog zakonika
+				</ref>
+				.
+			</p>
+
+			<conclusions>
+				<p>
+					Pa ga 
+					<organization id="vspodgorica" referesTo="#vspodgorica">
+						sud 
+					</organization>
+					primjenom  citiranih zakonskih odredbi, te 
+					<ref href="/krivicni#art_3">
+						čl. 3
+					</ref>
+					, 
+					<ref href="/krivicni#art_4">
+						4
+					</ref>
+					, 
+					<ref href="/krivicni#art_5">
+						5
+					</ref>
+					, 
+					<ref href="/krivicni#art_13">
+						13
+					</ref>
+					, 
+					<ref href="/krivicni#art_15">
+						15
+					</ref>
+					, 
+					<ref href="/krivicni#art_32">
+						32
+					</ref>
+					, 
+					<ref href="/krivicni#art_36">
+						36
+					</ref>
+					, 
+					<ref href="/krivicni#art_42">
+						42
+					</ref>
+					, 
+					<ref href="/krivicni#art_45">
+						45 st.1 tač.3
+					</ref> 
+					, 
+					<ref href="/krivicni#art_46">
+						46 st.1 tač. 2 
+					</ref> 
+					i 
+					<ref href="/krivicni#art_51">
+						51 Krivičnog zakonika 
+					</ref> 
+					te 
+					<ref href="/postupak#art_226">
+						čl. 226
+					</ref>
+					, 
+					<ref href="/postupak#art_229">
+						229
+					</ref>
+					, 
+					<ref href="/postupak#art_232">
+						239 
+					</ref> 
+					i 
+					<ref href="/postupak#art_374">
+						374 Zakonika o krivičnom postupku
+					</ref>
+					. 
+				</p>
+
+				<p style="text-align: center;">O S U Đ U J E</p>
+
+				<p>
+					Na kaznu zatvora u trajanju od 1 (jedne) godine u koju kaznu mu se uračunava 
+					vrijeme provedeno u pritvoru počev od 18.03.2013. godine, pa nadalje, a koji 
+					pritvor može trajati do pravosnažnosti presude, a najduže dok ne istekne 
+					vrijeme trajanja kazne izrečene u presudi.
+				</p>
+				<p>
+					<party id="le" refersTo="#le" as="#defendant">
+						Optuženi 
+					</party> 
+					je dužan da uplati troškove krivičnog postuka budžetu Crne Gore na ime 
+					medicinskog vještačenja iznos od 220,00 € i 50,00 € na ime sudskog paušala, 
+					a sve u roku od 15 dana od pravosnažnosti presude, pod prijetnjom prinudne 
+					naplate
+				</p>
+				<p>
+					Oštećeni Z. N.se upućuje radi ostvarivanja imovinskog zahtjeva na parnicu.
+				</p>
+
+			</conclusions>
+		</judgmentBody>
+	</judgment>
+</akomaNtoso>

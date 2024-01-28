@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd " xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+	<judgment>
+		<meta>
+			<identification source="#court">
+				<FRBRWork>
+					<FRBRauthor>
+						Osnovni Sud u Podgorici
+					</FRBRauthor>
+					<FRBRdate date="2018-5-28">
+						2018-5-28
+					</FRBRdate>
+					<FRBRtitle>
+						K 103/2018
+					</FRBRtitle>
+					<FRBRcountry>
+						CG
+					</FRBRcountry>
+				</FRBRWork>
+			</identification>
+			<references>
+				<TLCOrganization eId="ospodgorica" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici" />
+				<TLCOrganization eId="odtpodgorica" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno državno tužilaštvo iz Podgorice" />
+
+
+				<TLCPerson eId="lmstamatovic" href="/ontology/person/lmstamatovic" showAs=" Larisa Mijušković-Stamatović" />
+				<TLCPerson eId="msekulic" href="/ontology/person/msekulic" showAs="Marina Sekulić" />
+				<TLCPerson eId="rv" href="/ontology/person/rv" showAs="R.V." />
+				<TLCPerson eId="mzorica" href="/ontology/person/mzorica" showAs="Milanović Zorica" />
+
+				<TLCRole eId="plaintiff" href="/ontology/role/plaintiff" showAs="Plaintiff" />
+				<TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+				<TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+				<TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+				<TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+				<TLCRole eId="defender" href="/ontology/role/defender" showAs="Defender" />
+			</references>
+		</meta>
+		<judgmentBody>
+			<p>
+				<organization id="ospodgorica" referesTo="#ospodgorica">
+					OSNOVNI SUD U PODGORICI
+				</organization>
+				, prvostepeni, krivični, po sudiji 
+				<party id="lmstamatovic" refersTo="#lmstamatovic" as="#judge">
+					Larisi Mijušković-Stamatović
+				</party>
+				, uz učešće zapisničara 
+				<party id="msekulic" refersTo="#msekulic" as="#clerk">
+					Marine Sekulić
+				</party>
+				, u krivičnom predmetu protiv okrivljenog
+				<party id="rv" refersTo="#rv" as="#defendant">
+					R. V.
+				</party>
+				 iz Podgorice, zbog četiri krivična djela razbojništvo iz 
+				<ref href="/krivicni#art_242__list_1__point_1">
+					čl.242 st.1 Krivičnog zakonika Crne Gore
+				</ref>
+				, postupajući po optužnici 
+				<organization id="odtpodgorica" referesTo="#odtpodgorica">
+					Osnovnog državnog tužilaštva Podgorica
+				</organization>
+				 Kt.br.80/18 od 13.02.2018. godine, koju je na glavnom pretresu zastupala
+				<party id="mzorica" refersTo="#mzorica" as="#plaintiff">
+					Milanović Zorica
+				</party>
+				državna tužiteljka u 
+				<organization id="odtpodgorica" referesTo="#odtpodgorica">
+					Osnovnom državnom tužilaštvu Podgorica
+				</organization>
+				, nakon glavnog i javnog pretresa održanog dana 28.05.2018. godine u prisustvu zastupnika 
+				optužbe i
+				<party id="rv" refersTo="#rv" as="#defendant">				
+					okrivljenog
+				</party>
+				sa braniocem po službenoj dužnosti
+				<party id="rv" refersTo="#rv" as="#defendant">				
+					R.V.
+				</party>
+				adv. iz Podgorice, donio je, a dana 31.05.2018.godine i javno objavio, 
+			</p>
+			<p style="text-align: center;">P R E S U D U</p>
+			<p>Okrivljeni: </p>
+			<p>
+				<party id="rv" refersTo="#rv" as="#defendant">				
+					R.V.
+				</party>
+				, jmbg ..., od oca V. i majke J., rođene Ć., rođen ..... godine u P., sa prebivalištem 
+				u P., ulica D. N. M. bb, crnogorski državljanin, po zanimanju sportski menadžer, oženjen, 
+				otac troje djece, pismen, govori srpski jezik, crnogorski jezik razumije, lošeg imovnog 
+				stanja, u pritvoru od 23.01.2018. godine od 01, 30 časova po rješenju sudije za istragu
+				<organization id="ospodgorica" referesTo="#ospodgorica">
+					Osnovnog suda u Podgorici 
+				</organization>
+				Kri br. 23/18 od 25.01.2018. godine, osuđivan presudom
+				<organization id="ospodgorica" referesTo="#ospodgorica">
+					Osnovnog suda u Podgorici 
+				</organization>
+				K.br. 07/234 od 13.10.2008. godine zbog krivičnog djela iz
+				<ref href="/krivicni#art_399__list_1__point_2">
+					399 st. 2 u vezi st. 1 Krivičnog zakonika 
+				</ref>			
+				na kaznu zatvora u trajanju od 3 mjeseca, 
+			</p>
+			
+			<p style="text-align: center;">K R I V J E</p>
+			<p>Zato što je:</p>
+			<p>
+				1. Dana 22. novembra 2017. godine , oko 19,00 časova u Podgorici, u ul. S. br. .., u 
+				prostorijama kladionice „B.“, koja posluje u okviru oštećenog privrednog društva 
+				“ S. G.“ d.o.o. iz B., prijetnjom da će neposredno napasti na život i tijelo oštećene 
+				M. N., oduzeo tuđu pokretnu stvar – novac, u namjeri da njegovim prisvajanjem sebi 
+				pribavi protivpravnu imovinsku korist, iako je bio svjestan svog djela, čije izvršenje 
+				je htio, znajući da je njegovo djelo zabranjeno, na način što je premaskiran, sa kapom 
+				navučenom preko lica, ušao u prostorije navedene kladionice i držeći nož u ruci usmjeren 
+				u pravcu oštećene M. N., koja je stajala za naplatnim pultom kada joj je rekao „ daj 
+				mi novac“ , nakon čega je prošao do pulta i iz fioke uzeo kutiju u kojoj se nalazio novac 
+				u iznosu od 400 eura, vlasništvo oštećenog privrednog društva “ S. Gr.“ d.o.o. iz B., a 
+				potom pobjegao sa lica mjesta
+			</p>
+			<p>
+				2. Dana 06.decembra 2017. godine oko 19,00 časova, u P., u ul. S. br. .., u prostorijama 
+				kladionice „B.“, koja posluje u okviru oštećenog privrednog društva “ S. G.“ d.o.o. B., 
+				prijetnjom da će neposredno napasti na život i tijelo oštećene O. A., oduzeo tuđu pokretnu 
+				stvar – novac, u namjeri da njegovim prisvajanjem sebi pribavi protivpravnu imovinsku 
+				korist, iako je bio svjestan svog djela, čije izvršenje je htio, znajući da je njegovo 
+				djelo zabranjeno, na način što je premaskiran sa kapom navučenom preko lica i sa kapuljačom 
+				od dukserice navučenom preko glave, ušao u prostorije kladionice i držeći nož usmjeren u 
+				pravcu oštećene O. A. rekao joj “vadi pare, daj pare”, nakon čega je iz fioke oduzeo novac 
+				u iznosu od 260,00 eura vlasništvo oštećenog privrednog društva “ S. G.“ d.o.o. iz Budve 
+				i pobjegao sa lica mjesta
+			</p>
+			<p>
+				3. Dana 26. decembra 2017. godine oko 19,30 časova u P., u ul. Z., u prostorijama apoteke 
+				„M.P. 1“ , koja posluje u okviru oštećenog privrednog društva „F. M.“ DOO D., prijetnjom 
+				da će neposredno napasti na život i tijelo oštećene J. B., oduzeo tuđu pokretnu stvar-novac, 
+				u namjeri da njegovim prisvajanjem sebi pribavi protivpravnu imovinsku korist, iako je bio 
+				svjestan svog djela, čije izvršenje je htio, znajući da je njegovo djelo zabranjeno, na način 
+				što je premaskiran sa kapom navučenom preko lica i kapom od dukserice navučenom preko glave, 
+				ušao u prostorije navedene apoteke, nakon čega je izvadio pištolj koji je usmjerio u pravcu 
+				oštećene B. J. i prijetio joj “pucaću, daj pare”, nakon čega je ista otvorila kasu, izvadila 
+				novac u iznosu od 400,00 eura, vlasništvo oštećenog privrednog društva „F.M.“ DOO D. i predala 
+				ga 
+			</p>
+			<p>
+				<party id="rv" refersTo="#rv" as="#defendant">				
+					okrivljenom
+				</party>
+				, kojem je pri izlasku iz apoteke ispala novčanica u apoenu od 5,00 eura, pa je isti prisvojio 
+				novac u iznosu od 395,00 eura,
+			</p>
+			<p>
+				4. Dana 12. januara 2018. godine oko 19,00 časova, u P., u ulici S. br. .., u prostorijama 
+				apoteke “J. p. ”, koja posluje u okviru oštećenog privrednog društva DOO „J. F.“ P., 
+				prijetnjom da će neposredno napasti na život i tijelo oštećenih M. J. – Đ. i S.P., oduzeo 
+				tuđu pokretnu stvar-novac, u namjeri da njegovim prisvajanjem sebi pribavi protivpravnu 
+				imovinsku korist, iako je bio svjestan svog djela, čije izvršenje je htio, znajući da je 
+				njegovo djelo zabranjeno, na način što je premaskiran sa kapom navučenom preko lica, ušao 
+				u prostorije apoteke i iz džepa izvadio crni pištolj koji je usmjerio u pravcu oštećenih, 
+				govoreći im “ ovo je klasična pljačka, vadi pare” , nakon čega su iste otvorile kasu i novac 
+				u iznosu od 835,00 eura vlasništvo oštećenog privrednog društva DOO „J. F.“ Podgorica stavile 
+				na pult, koji novac je 
+				<party id="rv" refersTo="#rv" as="#defendant">				
+					okrivljeni
+				</party>
+				uzeo, a potom pobjegao sa lica mjesta.
+			</p>
+			<p>
+				- čime je učinio četiri krivična djela - razbojništvo iz
+				<ref href="/krivicni#art_242__list_1__point_1">
+					člana 242 stav 1 Krivičnog zakonika Crne Gore
+				</ref>
+				
+			</p>
+			<conclusions>
+				<p>
+					- pa
+					<party id="rv" refersTo="#rv" as="#defendant">
+						mu
+					</party>
+					<organization id="ospodgorica" referesTo="#ospodgorica">
+						Sud
+					</organization>
+					 primjenom citiranog zakonskog propisa te
+					<ref href="/krivicni#art_3">
+						čl.3
+					</ref>
+					,
+					<ref href="/krivicni#art_4">
+						4
+					</ref>
+					,
+					<ref href="/krivicni#art_5">
+						5
+					</ref>
+					,
+					<ref href="/krivicni#art_13">
+						13
+					</ref>
+					,
+					<ref href="/krivicni#art_15">
+						15
+					</ref>
+					,
+					<ref href="/krivicni#art_32">
+						32
+					</ref>
+					,
+					<ref href="/krivicni#art_36">
+						36
+					</ref>
+					,
+					<ref href="/krivicni#art_42">
+						42
+					</ref>
+					,
+					<ref href="/krivicni#art_45">
+						45
+					</ref>
+					,
+					<ref href="/krivicni#art_46">
+						46
+					</ref>
+					i
+					<ref href="/krivicni#art_48__list_1__point_1">
+						48 st. 1
+					</ref>
+					Krivičnog zakonika Crne Gore prethodno utvrđuje: 
+				</p>
+				<p>
+					- za krivično djelo razbojništvo iz 
+					<ref href="/krivicni#art_242__list_1__point_1">
+						čl. 242 st. 1 Krivičnog zakonika Crne Gore 
+					</ref>
+					bliže opisano tačkom 1 izreke ove presude, kaznu zatvora u trajanju od 1 (jedne) godine; 
+				</p>
+				<p>
+					- za krivično djelo razbojništvo iz			
+					<ref href="/krivicni#art_242__list_1__point_1">
+						čl. 242 st. 1 Krivičnog zakonika Crne Gore 
+					</ref>					
+					bliže opisano tačkom 2 izreke ove presude, kaznu zatvora u trajanju od 1 (jedne) godine; 
+				</p>
+				<p>
+					- za krivično djelo razbojništvo iz
+					<ref href="/krivicni#art_242__list_1__point_1">
+						čl. 242 st. 1 Krivičnog zakonika Crne Gore 
+					</ref>
+					bliže opisano tačkom 3 izreke ove presude, kaznu zatvora u trajanju od 1 (jedne) godine; 
+				</p>
+				<p>
+					- za krivično djelo razbojništvo iz
+					<ref href="/krivicni#art_242__list_1__point_1">
+						čl. 242 st. 1 Krivičnog zakonika Crne Gore 
+					</ref>					
+					bliže opisano tačkom 4 izreke ove presude, kaznu zatvora u trajanju od 1 (jedne) godine; 
+				</p>
+				<p>
+					Za ovim
+					<organization id="ospodgorica" referesTo="#ospodgorica">
+						sud
+					</organization>
+					<party id="rv" refersTo="#rv" as="#defendant">
+						okrivljenog R. V. 
+					</party>
+					primjenom citiranih zakonskih odredbi te
+					<ref href="/krivicni#art_48__list_1__point_2_2">
+						čl. 48 st. 2 tač. 2 
+					</ref>		
+					i
+					<ref href="/krivicni#art_51">
+						51 Krivičnog zakonika Crne Gore
+					</ref>
+					, te članova
+					<ref href="/postupak#art_226">
+						226
+					</ref>
+					,
+					<ref href="/postupak#art_227">
+						227
+					</ref>
+					,
+					<ref href="/postupak#art_229">
+						229
+					</ref>
+					,
+					<ref href="/postupak#art_239">
+						239
+					</ref>
+					,
+					<ref href="/postupak#art_374">
+						374 Zakonika o krivičnom postupku
+					</ref>
+					, 
+				</p>
+				<p style="text-align: center;">O S U Đ U J E</p>
+				<p>
+					 Na jedinstvenu kaznu zatvora u trajanju od 3 (tri) godine i 6 (šest) mjeseci u koju kaznu
+					<party id="rv" refersTo="#rv" as="#defendant">
+						mu 
+					</party>	
+					se uračunava i vrijeme provedeno u pritvoru počev od 23.01.2018. godine od 01,30 časova, 
+					kao dana i časa lišenja slobode, pa nadalje. 
+				</p>
+				<p>
+					Obavezuje se
+					<party id="rv" refersTo="#rv" as="#defendant">
+						okrivljeni 
+					</party>
+					da na ime sudskog paušala, a na račun budžetskih sredstava	
+					<organization id="ospodgorica" referesTo="#ospodgorica">
+						suda
+					</organization>		
+					 uplati iznos od 50,00 € (pedeseteura) u roku od 15 dana po pravnosnažnosti presude, pod 
+					 prijetnjom prinudne naplate; kao i troškove službene odbrane o kojima će sud odlučiti 
+					 posebnim rješenjem nakon pravnosnažnosti presude. 
+				</p>
+				<p>
+					Obavezuje se 
+					<party id="rv" refersTo="#rv" as="#defendant">
+						okrivljeni 
+					</party>
+					da oštećenima na ime imovinsko-pravnog zahtjeva isplati, i to: Oštećenom DOO "S. G." 
+					iznos od 660,00 €, a oštećenom DOO "J. F." iznos od 835,00 €, sve u roku od 2 (dva) 
+					mjeseca po pravnosnažnosti presude, pod prijetnjom prinudne naplate.						
+				</p>
+			</conclusions>
+		</judgmentBody>
+	</judgment>
+</akomaNtoso>

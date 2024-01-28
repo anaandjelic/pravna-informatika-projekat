@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd " xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+	<judgment>
+		<meta>
+			<identification source="#court">
+				<FRBRWork>
+					<FRBRauthor>
+						Osnovni Sud u Nikšiću
+					</FRBRauthor>
+					<FRBRdate date="2013-6-14">
+						2013-6-14
+					</FRBRdate>
+					<FRBRtitle>
+						K 131/2010
+					</FRBRtitle>
+					<FRBRcountry>
+						CG
+					</FRBRcountry>
+				</FRBRWork>
+			</identification>
+			<references>
+				<TLCOrganization eId="osniksic" href="/ontology/organization/OsnovniSud.Niksic" showAs="Osnovni Sud u Nikšiću" />
+				<TLCOrganization eId="ospodgorica" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici" />
+				<TLCOrganization eId="odtpodgorica" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno Državno Tužilaštvo u Podgorici" />
+				<TLCOrganization eId="osns" href="/ontology/organization/OpstinskiSud.NoviSad" showAs="Opštinski sud Novi Sad" />
+				<TLCOrganization eId="oskotor" href="/ontology/organization/OsnovniSud.Kotor" showAs="Osnovni sud u Kotoru" />
+				<TLCOrganization eId="oksns" href="/ontology/organization/OkružniSud.NoviSad" showAs="Okružni sud Novi Sad" />
+
+				<TLCPerson eId="bdragan" href="/ontology/person/bdragan" showAs="Babović Dragan" />
+				<TLCPerson eId="kstanka" href="/ontology/person/kstanka" showAs="Krištof Stanka" />
+
+				<TLCPerson eId="ts" href="/ontology/person/ts" showAs="T S" />
+				<TLCPerson eId="md" href="/ontology/person/md" showAs="M D" />
+
+
+				<TLCRole eId="plaintiff" href="/ontology/role/plaintiff" showAs="Plaintiff" />
+				<TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+				<TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+				<TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+				<TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+				<TLCRole eId="defender" href="/ontology/role/defender" showAs="Defender" />
+			</references>
+		</meta>
+		<judgmentBody>
+			<p>
+				<organization id="osniksic" referesTo="#osniksic">
+					OSNOVNI SUD U NIKŠIĆU
+				</organization>
+				, kao prvostepeni krivični, sudija 
+				<party id="bdragan" refersTo="#bdragan" as="#judge">
+					Babović Dragan
+				</party>
+				, uz sudjelovanje 
+				<party id="kstanka" refersTo="#kstanka" as="#clerk">
+					Krištof Stanke
+				</party>
+				, kao zapisničara, u krivičnom predmetu protiv okrivljenog
+				<party id="ts" refersTo="#ts" as="#defendant">
+					T S
+				</party>
+				, zbog krivičnog djela utaja iz
+				<ref href="/krivicni#art_243__list_1__point_1">
+					čl.243 st.1 
+				</ref>
+				u vezi
+				<ref href="/krivicni#art_243__list_1__point_2">
+					st.2 KZ 
+				</ref>
+				u vezi
+				<ref href="/krivicni#art_49">
+					čl.49 KZ
+				</ref>
+				, postupanjući po optužnici 			
+				<organization id="odtpodgorica" referesTo="#odtpodgorica">
+					ODT-a, Nikšić
+				</organization>
+				Kt. br. 99/09 od 10.03.2010. godine, nakon dovršenog glavnog i javnog pretresa 
+				dana xxxxxxxgodine, u prisustvu zamjenika ODT iz Nikšića, 
+				<party id="mv" refersTo="#mv" as="#plaintiff">
+					M V
+				</party>
+				<party id="ts" refersTo="#ts" as="#defendant">
+					okrivljenog T S
+				</party>			
+				, njegovog branioca
+				<party id="md" refersTo="#md" as="#defender">
+					M D
+				</party>
+				advokata iz N, donio je, a dana xxxxxxx.godine i javno objavio
+			</p>
+			<p style="text-align: center;">P R E S U D U</p>
+			<p>Okrivljeni: </p>
+			<p>
+				<party id="ts" refersTo="#ts" as="#defendant">
+					T S,
+				</party>
+				od oca P i majke D , rođene B , rođen xxxxxx.godine u N s prebivalištem u N – ul. 
+				A P br. 4, državljanin Crne Gore, oženjen, otac jednog djeteta, pismen – završio 
+				SSS, slabog imovnog stanja, ranije osudjivan: presudom
+				<organization id="osns" referesTo="#osns">
+					Opštinskog suda Novi Sad
+				</organization>
+				K.br. 224/93 od 06.07.1994.godine zbog kriv.djela nedozvoljeno držanje vatrenog 
+				oružja – 4 mjeseca zatvora, kaznu izdržao od 04.04.1995.godine do 23.06.1995.
+				godine uz uslovni otpust, presudom
+				<organization id="oskotor" referesTo="#oskotor">
+					Osnovnog suda Kotor
+				</organization>
+				K.br. 265/94 od 29.08.1994.godine zbog kriv.djela iz
+				<ref href="/krivicni#art_207__list_1_point_3">
+					čl.207.st.3.
+				</ref>
+				u vezi
+				<ref href="/krivicni#art_207__list_1_point_1">
+					st.1. KZ RCG 
+				</ref>
+				- 3 mjeseca zatvora – kaznu izdržao od 11.08.1999.godine do 14.09.1999.godine uz 
+				uslovni otpust, presudom
+				<organization id="oksns" referesTo="#oksns">
+					Okružnog suda Novi Sad
+				</organization>
+				K.br. 218/03 od 04.11.2004.godine zbog kriv.djela iz
+				<ref href="/krivicni#art_47__list_1_point_2">
+					čl. 47.st.2.
+				</ref>
+				u vezi
+				<ref href="/okz#art_19">
+					čl.19.
+				</ref>	
+				OKZ - oslobadja se od optužbe, presudom
+				<organization id="oksns" referesTo="#oksns">
+					Okružnog suda Novi Sad
+				</organization>
+				, K.br. 264/01 od 10.01.2006.godine zbog kriv.djela iz
+				<ref href="/zoom_rs#art_33__list_1__point_1">
+					čl. 33.st.1.
+				</ref>
+				. ZOOM RS – 2 mjeseca i 15 dana zatvora, presudom
+				<organization id="osns" referesTo="#osns">
+					Opštinskog suda Novi Sad
+				</organization>
+				, K.br. 725/05 od 17.11.2005.godine zbog kriv.djela iz 
+				<ref href="/kz_rs#art_195__list_1__point_3">
+					čl. 195.st.3.
+				</ref>
+				u vezi
+				<ref href="/kz_rs#art_195__list_1__point_1">
+					st.1.
+				</ref>
+				– 1 mjesec zatvora uslovno na 1 godinu. 
+			</p>
+			<p style="text-align: center;">K R I V J E</p>
+			<p>
+				što je: Dana xxxxxx.godine u N , u namjeri da sebi pribavi protivpravnu imovinsku 
+				korist, prisvojio putničko motorno vozilo marke „Golf 5“, reg.br. NK AF 719, u 
+				vrijednosti od xxxxxx €, vlasništvo „xxxxxx“ DOO Nikšić čiji su vlasnici B c N i 
+				K R , koje mu je na osnovu Ugovora od 21.12.2008.godine povjereno na korišćenje za 
+				period od 21.12 do 28.12.2008.godine, na način što vozilo nije vratio nakon isteka 
+				perioda navedenog u ugovoru već ga je zadržao i time pribavio protivpravnu 
+				imovinsku korist u iznosu od 15.818,oo €,
+			</p>
+			<p>
+				-čime je izvršio kriv.djelo utaja iz 
+				<ref href="/krivicni#art_243__list_1_point_1">
+					 čl. 243.st.1. 
+				</ref>
+				 u vezi 
+				<ref href="/krivicni#art_243__list_1_point_2">
+				 	st.2 Krivičnog zakonika
+				</ref>
+				.
+			</p>
+			<conclusions>
+				<p>
+					Pa
+					<party id="ts" refersTo="#ts" as="#defendant">
+						ga
+					</party>
+					<organization id="osniksic" referesTo="#osniksic">
+						sud
+					</organization>
+					za navedeno krivično djelo primjenom
+					<ref href="/krivicni#art_4__list_1__point_2">
+						čl.4 stav 2
+					</ref>
+					, 
+					<ref href="/krivicni#art_32">
+						32
+					</ref>
+					, 
+					<ref href="/krivicni#art_36">
+						36
+					</ref>
+					, 
+					<ref href="/krivicni#art_42">
+						42
+					</ref>
+					, 
+					<ref href="/krivicni#art_45">
+						45 
+					</ref>
+					i 
+					<ref href="/krivicni#art_46">
+						46 Krivičnog zakonika 
+					</ref>
+					i 
+					<ref href="/postupak#art_226">
+						čl 226
+					</ref>
+					, 
+					<ref href="/postupak#art_229">
+						229
+					</ref>
+					, 
+					<ref href="/postupak#art_374">
+						čl.374 Zakonika o krivičnom postupku
+					</ref>
+				</p>
+				<p style="text-align: center;">O S U Đ U J E</p>
+				<p>
+					Na kaznu zatvora u trajanju od 3 (tri) mjeseca koju kaznu je dužan izdržati 
+					nakon pravosnažnsti presude. 
+				</p>
+				<p>
+					Obavezuje se 
+					<party id="ts" refersTo="#ts" as="#defendant">
+						okrivljeni
+					</party>
+					plati iznos od 118,oo € u roku od 15 dana po pravosnažnosti presude pod 
+					prijetnjom prinudnog izvršenja, na žiro račun
+					<organization id="osniksic" referesTo="#osniksic">
+						Osnovnog suda u Nikšiću
+					</organization>
+					br. 832-152-32.
+				</p>
+			</conclusions>
+		</judgmentBody>
+	</judgment>
+</akomaNtoso>
