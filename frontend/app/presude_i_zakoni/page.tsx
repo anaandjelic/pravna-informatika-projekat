@@ -3,6 +3,7 @@
 import { ListItem } from "@/app/ui/list_item";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { FilePath } from "@/lib/file_path";
 import { FileText } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
