@@ -44,11 +44,11 @@ export default function PresudeIZakoni() {
   }, [tab, presude, selectedPDFIndex]);
 
   return (
-    <div className="flex h-full flex-row overflow-hidden space-x-6">
+    <div className="flex h-full flex-row overflow-hidden space-x-6 pr-2 pb-2">
       <Tabs
         value={tab}
         onValueChange={onTabChange}
-        className="flex flex-col w-96 h-full"
+        className="flex flex-col pl-3 py-3 rounded-md shadow-md bg-secondary w-96 h-full"
       >
         <div className="hack pb-4">
           <TabsList>
@@ -64,7 +64,7 @@ export default function PresudeIZakoni() {
             className="h-full"
             type="always"
           >
-            <div className="w-full pr-2">
+            <div className="w-full pr-3">
               {presude.map((file, index) => (
                 <ListItem
                   key={index}
@@ -85,7 +85,7 @@ export default function PresudeIZakoni() {
             className="h-full"
             type="always"
           >
-            <div className="w-full pr-2">
+            <div className="w-full pr-3">
               {zakoni.map((file, index) => (
                 <ListItem
                   key={index}
@@ -100,9 +100,9 @@ export default function PresudeIZakoni() {
         </TabsContent>
       </Tabs>
       <iframe
-        className="w-full"
+        className="flex-grow"
         src={pdfToShow}
-      ></iframe>
+      />
     </div>
   );
 }
