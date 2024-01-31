@@ -40,7 +40,7 @@ export default function PresudeIZakoni() {
     } else {
       return zakoni[selectedPDFIndex]?.path;
     }
-  }, [tab, selectedPDFIndex]);
+  }, [tab, presude, selectedPDFIndex]);
 
   return (
     <div className="flex h-full flex-row overflow-hidden space-x-6">
