@@ -2,5 +2,16 @@
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
+    },
+    "prettier.documentSelectors": [
+        "**/*.{tsx,ts,mjs,js}"
+    ],
+    "prettier.ignorePath": "",
+    "prettier.useEditorConfig": false,
+    "prettier.printWidth": 120,
+    "prettier.singleAttributePerLine": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
     }
 }
