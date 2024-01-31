@@ -1,3 +1,4 @@
+import { Sidebar } from "@/app/ui/sidebar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -16,7 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+          <div className="w-full flex-none md:w-72 shadow-xl">
+            <Sidebar />
+          </div>
+          <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
+        </div>
+      </body>
     </html>
   );
 }
