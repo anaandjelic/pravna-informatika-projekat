@@ -1,72 +1,89 @@
-import os
-import pathlib
+import json
 import re
 import sys
+from pathlib import Path
+from typing import Any
+from typing import Dict
+from typing import Iterable
+from typing import List
+from typing import Set
 
 import pandas as pd
 
-current_path = pathlib.Path(__file__).parent.resolve()
+ROOT_DIR = Path(__file__).parent.resolve()
 
-df = pd.read_csv(str(current_path) + '/primer.csv')
-
-avg_vr_ukradenih_stvari = df['vr_ukradenih_stvari'].mean()
-threshold = avg_vr_ukradenih_stvari/5
-
-attributes_to_compare = ['sud', 'tuzilac', 'kriv_delo', 'clanovi_kriv_dela', 'clanovi_osude']
-
-parameters = sys.stdin.readline().strip().split('|')
-court, prosecutor, value_of_stolen_things, criminal_act, articles_used, articles_condemnation = parameters
+ATTRIBUTES_TO_COMPARE = ['sud', 'tuzilac', 'kriv_delo', 'clanovi_kriv_dela', 'clanovi_osude']
+COLUMNS_TO_EXCLUDE = ['broj_slucaja', 'sudija', 'optuzeni', 'vr_ukradenih_stvari', 'kazna']
 
 
-def calculate_jaccard_similarity(set1, set2):
-    intersection = len(set1.intersection(set2))
-    union = len(set1.union(set2))
+def calc_jaccard_similarity(set1: Set[str], set2: Set[str]) -> float:
+    union = len(set1 | set2)
+    if union == 0:
+        return 0
 
-    jaccard_similarity = intersection / union if union != 0 else 0
-    return jaccard_similarity
+    return len(set1 & set2) / union  # intersection / union
 
 
-columns_to_exclude = ['broj_slucaja', 'sudija', 'optuzeni', 'vr_ukradenih_stvari', 'kazna']
-
-file_input = ''
-
-cases = []
-jaccard_similarities = []
-
-for index, row in df.iterrows():
-    
-    existing_values = [str(val) for col, val in row.items() if
-                       col not in columns_to_exclude]
-    entered_values = [court, prosecutor, criminal_act, articles_used, articles_condemnation]
-
-    existing_set = set(re.split(r'[.,\s]', ' '.join(existing_values)))
-    entered_set = set(re.split(r'[.,\s]', ' '.join(entered_values)))
-    jaccard_similarity = calculate_jaccard_similarity(existing_set, entered_set)
-
-    exisiting_value = row['vr_ukradenih_stvari']
-    value_diff = abs(exisiting_value - float(value_of_stolen_things))
-
+def calc_modified_jaccard_similarity(
+    jaccard_similarity: float, avg_value_of_stolen_things: float, threshold: float, value_diff
+) -> float:
     if value_diff <= threshold:
         modified_diff = (1 - (value_diff / threshold)) / 1000  # max +0.1
         jaccard_similarity += modified_diff
     else:
-        modified_diff = value_diff / (10*avg_vr_ukradenih_stvari)  # if diff = 10*avg, then -1
+        modified_diff = value_diff / (10 * avg_value_of_stolen_things)  # if diff = 10*avg, then -1
         jaccard_similarity -= modified_diff
-    
 
-    row_values = df.iloc[index].astype(str)
-    result_string = ', '.join(f'{col_name}: {col_value}' for col_name, col_value in zip(row_values.index, row_values))
+    return jaccard_similarity
 
-    jaccard_similarities.append(jaccard_similarity)
-    cases.append(result_string)
 
-combined_data = list(zip(cases, jaccard_similarities))
-sorted_data = sorted(combined_data, key=lambda x: x[1], reverse=True)
-sorted_case_names, sorted_jaccard_similarities = zip(*sorted_data)
+def get_case_set(values: Iterable[str]) -> Set[str]:
+    return set(re.split(r'[.,\s]', string=' '.join(values)))
 
-for i in range(4):
-    file_input += (sorted_case_names[i] + ' | Modifikovana Jaccard-ova sličnost: ' + str(round(sorted_jaccard_similarities[i], 2)) + '\n')
 
-with open(str(current_path) + "/cbr.txt", 'w', encoding='utf-8') as f:
-    f.write(file_input)
-    
+def get_case_dict(df: pd.DataFrame, index, jaccard_similarity) -> Dict[str, Any]:
+    case: Dict[str, Any] = df.iloc[index].astype(str).to_dict()
+    case['jaccard_similarity'] = f"{jaccard_similarity:.3f}"
+    return case
+
+
+def process_cases(
+    court: str,
+    prosecutor: str,
+    value_of_stolen_things_str,
+    criminal_act: str,
+    articles_used: str,
+    articles_condemnation: str,
+):
+    df = pd.read_csv(ROOT_DIR / 'primer.csv')
+
+    value_of_stolen_things = float(value_of_stolen_things_str)
+    avg_value_of_stolen_things = df['vr_ukradenih_stvari'].mean()
+    threshold = avg_value_of_stolen_things / 5
+
+    cases: List[Dict[str, Any]] = []
+    for index, row in df.iterrows():
+
+        jaccard_similarity = calc_jaccard_similarity(
+            get_case_set(values=(str(val) for col, val in row.items() if col not in COLUMNS_TO_EXCLUDE)),
+            get_case_set(values=(court, prosecutor, criminal_act, articles_used, articles_condemnation)),
+        )
+
+        jaccard_similarity = calc_modified_jaccard_similarity(
+            jaccard_similarity,
+            avg_value_of_stolen_things,
+            threshold,
+            value_diff=abs(row['vr_ukradenih_stvari'] - value_of_stolen_things),
+        )
+
+        cases.append(get_case_dict(df, index, jaccard_similarity))
+
+    cases.sort(key=lambda x: float(x['jaccard_similarity']), reverse=True)
+
+    with open(ROOT_DIR / 'cbr.txt', 'w', encoding='utf-8') as f:
+        json.dump(cases[:4], f, indent=4, ensure_ascii=False)
+
+
+if __name__ == '__main__':
+    parameters = sys.stdin.readline().strip().split('|')
+    process_cases(*parameters)
