@@ -1,4 +1,8 @@
 {
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
@@ -9,9 +13,5 @@
     "prettier.ignorePath": "",
     "prettier.useEditorConfig": false,
     "prettier.printWidth": 120,
-    "prettier.singleAttributePerLine": true,
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    }
+    "prettier.singleAttributePerLine": true
 }
