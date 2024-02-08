@@ -1,6 +1,7 @@
 "use client";
 
 import { ListItem } from "@/app/ui/list_item";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { FilePath } from "@/lib/file_path";
 import { FileText } from "lucide-react";
@@ -30,44 +31,59 @@ export default function HTMLPresude() {
 
   return (
     <div className="flex h-full flex-row overflow-hidden space-x-6 pr-2 pb-2">
-      <ScrollArea
-        className="p-3 rounded-md shadow-md bg-secondary w-96 h-full"
-        type="always"
-      >
-        <div className="w-full">
-          {presude.map((file, index) => (
-            <ListItem
-              key={index}
-              text={file.stem}
-              isSelected={index === selectedHTMLIndex}
-              Icon={FileText}
-              onClick={() => handleSelect(index)}
-            ></ListItem>
-          ))}
-        </div>
-      </ScrollArea>
+      <Card className="h-full">
+        <CardHeader>
+          <CardTitle>HTML Presude</CardTitle>
+          <CardDescription>Pregled presuda u HTML-u.</CardDescription>
+        </CardHeader>
+        <CardContent className="h-[90%]">
+          <ScrollArea
+            className="w-96 h-full"
+            type="always"
+          >
+            <div className="w-full pr-3">
+              {presude.map((file, index) => (
+                <ListItem
+                  key={index}
+                  text={file.stem}
+                  isSelected={index === selectedHTMLIndex}
+                  Icon={FileText}
+                  onClick={() => handleSelect(index)}
+                ></ListItem>
+              ))}
+            </div>
+          </ScrollArea>
+        </CardContent>
+      </Card>
       <div className="flex flex-col flex-grow space-y-6">
         <iframe
           className="flex-grow w-full"
           src={htmlToShow}
         />
-        <ScrollArea
-          className="p-3 rounded-md shadow-md bg-secondary w-full h-56"
-          type="always"
-        >
-          {/* TODO: Tabela atributa ovde */}
-          <p>Some text</p>
-          <p>Some text</p>
-          <p>Some text</p>
-          <p>Some text</p>
-          <p>Some text</p>
-          <p>Some text</p>
-          <p>Some text</p>
-          <p>Some text</p>
-          <p>Some text</p>
-          <p>Some text</p>
-          <p>Some text</p>
-        </ScrollArea>
+        <Card className="w-full h-72">
+          <CardHeader className="p-3">
+            <CardTitle className="text-lg">Tabela atributa presude</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ScrollArea
+              className="w-full h-56"
+              type="always"
+            >
+              {/* TODO: Tabela atributa ovde */}
+              <p>Some text</p>
+              <p>Some text</p>
+              <p>Some text</p>
+              <p>Some text</p>
+              <p>Some text</p>
+              <p>Some text</p>
+              <p>Some text</p>
+              <p>Some text</p>
+              <p>Some text</p>
+              <p>Some text</p>
+              <p>Some text</p>
+            </ScrollArea>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

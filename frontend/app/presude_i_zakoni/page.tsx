@@ -1,6 +1,7 @@
 "use client";
 
 import { ListItem } from "@/app/ui/list_item";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FilePath } from "@/lib/file_path";
@@ -45,60 +46,69 @@ export default function PresudeIZakoni() {
 
   return (
     <div className="flex h-full flex-row overflow-hidden space-x-6 pr-2 pb-2">
-      <Tabs
-        value={tab}
-        onValueChange={onTabChange}
-        className="flex flex-col pl-3 py-3 rounded-md shadow-md bg-secondary w-96 h-full"
-      >
-        <div className="hack pb-4">
-          <TabsList>
-            <TabsTrigger value="presude">Presude</TabsTrigger>
-            <TabsTrigger value="zakoni">Zakoni</TabsTrigger>
-          </TabsList>
-        </div>
-        <TabsContent
-          value="presude"
-          className="flex-grow overflow-auto"
-        >
-          <ScrollArea
-            className="h-full"
-            type="always"
+      <Card className="h-full">
+        <CardHeader>
+          <CardTitle>Presude i Zakoni</CardTitle>
+          <CardDescription>Pregled presuda i zakona u PDF-u.</CardDescription>
+        </CardHeader>
+        <CardContent className="h-[90%]">
+          <Tabs
+            value={tab}
+            onValueChange={onTabChange}
+            className="flex flex-col pl-3 py-3 w-96 h-full"
           >
-            <div className="w-full pr-3">
-              {presude.map((file, index) => (
-                <ListItem
-                  key={index}
-                  text={file.stem}
-                  isSelected={index === selectedPDFIndex}
-                  Icon={FileText}
-                  onClick={() => handleSelect(index)}
-                ></ListItem>
-              ))}
+            <div className="hack pb-4">
+              <TabsList>
+                <TabsTrigger value="presude">Presude</TabsTrigger>
+                <TabsTrigger value="zakoni">Zakoni</TabsTrigger>
+              </TabsList>
             </div>
-          </ScrollArea>
-        </TabsContent>
-        <TabsContent
-          value="zakoni"
-          className="flex-grow overflow-auto"
-        >
-          <ScrollArea
-            className="h-full"
-            type="always"
-          >
-            <div className="w-full pr-3">
-              {zakoni.map((file, index) => (
-                <ListItem
-                  key={index}
-                  text={file.stem}
-                  isSelected={index === selectedPDFIndex}
-                  Icon={FileText}
-                  onClick={() => handleSelect(index)}
-                ></ListItem>
-              ))}
-            </div>
-          </ScrollArea>
-        </TabsContent>
-      </Tabs>
+            <TabsContent
+              value="presude"
+              className="flex-grow overflow-auto"
+            >
+              <ScrollArea
+                className="h-full"
+                type="always"
+              >
+                <div className="w-full pr-3">
+                  {presude.map((file, index) => (
+                    <ListItem
+                      key={index}
+                      text={file.stem}
+                      isSelected={index === selectedPDFIndex}
+                      Icon={FileText}
+                      onClick={() => handleSelect(index)}
+                    ></ListItem>
+                  ))}
+                </div>
+              </ScrollArea>
+            </TabsContent>
+            <TabsContent
+              value="zakoni"
+              className="flex-grow overflow-auto"
+            >
+              <ScrollArea
+                className="h-full"
+                type="always"
+              >
+                <div className="w-full pr-3">
+                  {zakoni.map((file, index) => (
+                    <ListItem
+                      key={index}
+                      text={file.stem}
+                      isSelected={index === selectedPDFIndex}
+                      Icon={FileText}
+                      onClick={() => handleSelect(index)}
+                    ></ListItem>
+                  ))}
+                </div>
+              </ScrollArea>
+            </TabsContent>
+          </Tabs>
+        </CardContent>
+      </Card>
+
       <iframe
         className="flex-grow"
         src={pdfToShow}
