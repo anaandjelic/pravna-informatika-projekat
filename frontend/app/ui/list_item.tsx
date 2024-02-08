@@ -13,7 +13,7 @@ export function ListItem({ text, isSelected, Icon, onClick }: ListItemProps) {
     <Button
       variant={isSelected ? "default" : "outline"}
       size="lg"
-      className=" w-full justify-start py-8 mb-1"
+      className="w-full justify-start py-8 mb-1"
       onClick={onClick}
     >
       <Icon className="mr-2" />
