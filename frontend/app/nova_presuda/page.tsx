@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const sudovi = [
   "Vrhovni Sud CG",
@@ -92,6 +92,16 @@ export default function NovaPresuda() {
     console.log(values);
   }
 
+  function getCaseBasedReasoning(values: z.infer<typeof formSchema>) {
+    // Get case based reasoning
+    console.log("Case based reasoning", values);
+  }
+
+  function getRuleBasedReasoning(values: z.infer<typeof formSchema>) {
+    // Get rule based reasoning
+    console.log("Rule based reasoning", values);
+  }
+
   return (
     <div className="flex h-full flex-row overflow-hidden space-x-6 p-2">
       <Card className="w-1/2 h-full">
@@ -100,46 +110,76 @@ export default function NovaPresuda() {
             className="w-full h-full"
             onSubmit={form.handleSubmit(onSubmit)}
           >
-            <CardHeader>
+            <CardHeader className="border-b">
               <CardTitle>Nova presuda</CardTitle>
               <CardDescription>Forma za novu presudu.</CardDescription>
             </CardHeader>
-            <CardContent className="pb-0 h-[80%]">
+            <CardContent className="pb-0 h-[79%]">
               <ScrollArea
                 className="h-full"
                 type="always"
               >
                 <div className="w-full h-full space-y-3 p-3">
-                  <FormField
-                    control={form.control}
-                    name="sud"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Sud</FormLabel>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                        >
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Izaberite sud" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            {sudovi.map((sud, index) => (
-                              <SelectItem
-                                key={index}
-                                value={sud}
-                              >
-                                {sud}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div className="w-full grid grid-cols-2 gap-x-6">
+                    <FormField
+                      control={form.control}
+                      name="sud"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Sud</FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Izaberite sud" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {sudovi.map((sud, index) => (
+                                <SelectItem
+                                  key={index}
+                                  value={sud}
+                                >
+                                  {sud}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <div className="grid grid-cols-5 gap-x-2">
+                      <div className=" grid-rows-2">
+                        <div className="h-8" />
+                        <div className="py-2 flex items-center justify-end text-md">K</div>
+                      </div>
+                      <FormField
+                        control={form.control}
+                        name="brojPresude"
+                        render={({ field }) => (
+                          <FormItem className="col-span-2">
+                            <FormLabel>Case no.</FormLabel>
+                            <FormControl>
+                              <Input
+                                className="text-center"
+                                onChange={(e) => form.setValue("brojPresude", parseInt(e.target.value || "0"))}
+                                defaultValue={field.value}
+                                type="number"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <div className=" col-span-2 grid-rows-2">
+                        <div className="h-8" />
+                        <div className="py-2 flex items-end text-md ">/ 2024</div>
+                      </div>
+                    </div>
+                  </div>
                   <FormField
                     control={form.control}
                     name="sudija"
@@ -148,23 +188,6 @@ export default function NovaPresuda() {
                         <FormLabel>Sudija</FormLabel>
                         <FormControl>
                           <Input {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="brojPresude"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Case no.</FormLabel>
-                        <FormControl>
-                          <Input
-                            onChange={(e) => form.setValue("brojPresude", parseInt(e.target.value))}
-                            defaultValue={field.value}
-                            type="number"
-                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -183,47 +206,155 @@ export default function NovaPresuda() {
                       </FormItem>
                     )}
                   />
+                  <div className="grid grid-cols-2 gap-x-6">
+                    <FormField
+                      control={form.control}
+                      name="tuzilac"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Tužilac</FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Izaberite tužioca" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="osnovni">Osnovni Sud</SelectItem>
+                              <SelectItem value="visi">Viši Sud</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <div className="flex">
+                      <FormField
+                        control={form.control}
+                        name="vrednostUkradenihStvari"
+                        render={({ field }) => (
+                          <FormItem className="flex-grow">
+                            <FormLabel>Vrednost ukradenih stvari</FormLabel>
+                            <FormControl>
+                              <Input
+                                className="text-right"
+                                onChange={(e) =>
+                                  form.setValue("vrednostUkradenihStvari", parseInt(e.target.value || "0"))
+                                }
+                                defaultValue={field.value}
+                                type="number"
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <div className="grid-rows-2">
+                        <div className="h-8" />
+                        <div className="p-2 flex items-center justify-end text-md">€</div>
+                      </div>
+                    </div>
+                  </div>
                   <FormField
                     control={form.control}
-                    name="tuzilac"
+                    name="tipKradje"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Tužilac</FormLabel>
+                        <FormLabel>Tip krađe</FormLabel>
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value}
                         >
                           <FormControl>
                             <SelectTrigger>
-                              <SelectValue placeholder="Izaberite tužioca" />
+                              <SelectValue placeholder="Izaberite tip krađe" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="osnovni">Osnovni</SelectItem>
-                            <SelectItem value="visi">Viši</SelectItem>
+                            <SelectItem value="robbery">Razbojništvo</SelectItem>
+                            <SelectItem value="competition_outcome_arrangement">
+                              Dogovaranje ishoda takmičenja
+                            </SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  <FormField
-                    control={form.control}
-                    name="vrednostUkradenihStvari"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Vrednost ukradenih stvari</FormLabel>
-                        <FormControl>
-                          <Input
-                            onChange={(e) => form.setValue("brojPresude", parseInt(e.target.value))}
-                            defaultValue={field.value}
-                            type="number"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                  <div className="grid grid-cols-2 gap-x-6">
+                    {tipKradje && (
+                      <FormField
+                        control={form.control}
+                        name="namera"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Namera</FormLabel>
+                            <Select
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                            >
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Izaberite nameru" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                {tipKradje === "robbery" ? (
+                                  <>
+                                    <SelectItem value="keeps_stolen_thing">Čuva ukradenu stvar</SelectItem>
+                                    <SelectItem value="uses_force">Upotreba sile</SelectItem>
+                                    <SelectItem value="threatens_to_attack">Pretnja napadom</SelectItem>
+                                  </>
+                                ) : (
+                                  <>
+                                    <SelectItem value="own_benefit">Sopstveni interes</SelectItem>
+                                    <SelectItem value="someones_benefit">Interes nekog drugog</SelectItem>
+                                  </>
+                                )}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
                     )}
-                  />
+                    {tipKradje && (
+                      <FormField
+                        control={form.control}
+                        name="nacinKradje"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Način krađe</FormLabel>
+                            <Select
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                            >
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Izaberite način krađe" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="standard">Običan</SelectItem>
+                                {tipKradje === "robbery" && (
+                                  <>
+                                    <SelectItem value="group_or_seriously_injured">
+                                      Grupno ili nanete teške povrede
+                                    </SelectItem>
+                                    <SelectItem value="deprived_of_life">Lišen života</SelectItem>
+                                  </>
+                                )}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    )}
+                  </div>
                   <FormField
                     name="krivicnoDelo"
                     render={({ field }) => (
@@ -260,111 +391,28 @@ export default function NovaPresuda() {
                       </FormItem>
                     )}
                   />
-                  <FormField
-                    control={form.control}
-                    name="tipKradje"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Tip krađe</FormLabel>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                        >
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Izaberite tip krađe" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="robbery">Razbojništvo</SelectItem>
-                            <SelectItem value="competition_outcome_arrangement">
-                              Dogovaranje ishoda takmičenja
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  {tipKradje && (
-                    <FormField
-                      control={form.control}
-                      name="namera"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Namera</FormLabel>
-                          <Select
-                            onValueChange={field.onChange}
-                            defaultValue={field.value}
-                          >
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Izaberite nameru" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              {tipKradje === "robbery" ? (
-                                <>
-                                  <SelectItem value="keeps_stolen_thing">Čuva ukradenu stvar</SelectItem>
-                                  <SelectItem value="uses_force">Upotreba sile</SelectItem>
-                                  <SelectItem value="threatens_to_attack">Pretnja napadom</SelectItem>
-                                </>
-                              ) : (
-                                <>
-                                  <SelectItem value="own_benefit">Sopstveni interes</SelectItem>
-                                  <SelectItem value="someones_benefit">Interes nekog drugog</SelectItem>
-                                </>
-                              )}
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  )}
-                  {tipKradje && (
-                    <FormField
-                      control={form.control}
-                      name="nacinKradje"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Način krađe</FormLabel>
-                          <Select
-                            onValueChange={field.onChange}
-                            defaultValue={field.value}
-                          >
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Izaberite način krađe" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="standard">Običan</SelectItem>
-                              {tipKradje === "robbery" && (
-                                <>
-                                  <SelectItem value="group_or_seriously_injured">
-                                    Grupno ili nanete teške povrede
-                                  </SelectItem>
-                                  <SelectItem value="deprived_of_life">Lišen života</SelectItem>
-                                </>
-                              )}
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  )}
                 </div>
               </ScrollArea>
             </CardContent>
-            <CardFooter className="p-3 pt-0">
-              <Button
-                className="mt-3"
-                type="submit"
-              >
-                Submit
-              </Button>
+            <CardFooter className="w-full px-6 py-4 border-t">
+              <div className="w-full flex gap-2">
+                <Button
+                  onClick={form.handleSubmit(getCaseBasedReasoning)}
+                  variant="outline"
+                  type="button"
+                >
+                  Case Based Reasoning
+                </Button>
+                <Button
+                  onClick={form.handleSubmit(getRuleBasedReasoning)}
+                  variant="outline"
+                  type="button"
+                >
+                  Rule Based Reasoning
+                </Button>
+                <div className="flex-grow"></div>
+                <Button type="submit">Submit</Button>
+              </div>
             </CardFooter>
           </form>
         </Form>
