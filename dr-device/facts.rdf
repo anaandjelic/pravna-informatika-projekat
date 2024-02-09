@@ -3,9 +3,9 @@
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
   xmlns:lc="http://informatika.ftn.uns.ac.rs/legal-case.rdf#">
-  <lc:case rdf:about="http://informatika.ftn.uns.ac.rs/legal-case.rdf#case01">
-      <lc:name>case01</lc:name>
-      <lc:defendant>John</lc:defendant>
+  <lc:case rdf:about="http://informatika.ftn.uns.ac.rs/legal-case.rdf#K-69_2024">
+      <lc:name>K-69_2024</lc:name>
+      <lc:defendant>Nikola</lc:defendant>
       <lc:money rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31000</lc:money>
       <lc:steal_type>robbery</lc:steal_type>
       <lc:intention>uses_force</lc:intention>

@@ -89,14 +89,14 @@ async function getCaseBasedReasoning(values: z.infer<typeof formSchema>) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(values),
-  }).then((response) => response.json());
+    body: JSON.stringify(caseBasedReasoningDTO),
+  }).then((response) => response);
   console.log(result);
 }
 
 async function getRuleBasedReasoning(values: z.infer<typeof formSchema>) {
   const ruleBasedReasoningDTO = {
-    name: `K-${values.brojPresude}/2024`,
+    name: `K-${values.brojPresude}_2024`,
     defendant: values.optuzeni,
     money: values.vrednostUkradenihStvari,
     stealType: values.tipKradje,
