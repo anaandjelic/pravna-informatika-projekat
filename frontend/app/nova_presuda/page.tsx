@@ -70,6 +70,51 @@ const formSchema = z.object({
   }),
 });
 
+async function getCaseBasedReasoning(values: z.infer<typeof formSchema>) {
+  const caseBasedReasoningDTO = {
+    court: values.sud,
+    caseNumber: `K ${values.brojPresude}/2024`,
+    judge: values.sudija,
+    defendant: values.optuzeni,
+    plaintiff: values.tuzilac,
+    valueOfStolenThings: values.vrednostUkradenihStvari,
+    criminalAct: values.krivicnoDelo,
+    articlesCriminalAct: values.clanoviKrivicnihDela,
+    articlesCondemnation: values.clanoviOptuzbe,
+  };
+  console.log("Case based reasoning", caseBasedReasoningDTO);
+
+  const result = await fetch("http://localhost:8080/cbr/generate-reasoning", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(values),
+  }).then((response) => response.json());
+  console.log(result);
+}
+
+async function getRuleBasedReasoning(values: z.infer<typeof formSchema>) {
+  const ruleBasedReasoningDTO = {
+    name: `K-${values.brojPresude}/2024`,
+    defendant: values.optuzeni,
+    money: values.vrednostUkradenihStvari,
+    stealType: values.tipKradje,
+    intention: values.namera,
+    stealWay: values.nacinKradje,
+  };
+  console.log("Rule based reasoning", ruleBasedReasoningDTO);
+
+  const result = await fetch("http://localhost:8080/rbr/generate-reasoning", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(ruleBasedReasoningDTO),
+  }).then((response) => response.json());
+  console.log(result);
+}
+
 export default function NovaPresuda() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -77,7 +122,7 @@ export default function NovaPresuda() {
       sudija: "",
       brojPresude: 1,
       optuzeni: "",
-      vrednostUkradenihStvari: 100,
+      vrednostUkradenihStvari: 500,
       krivicnoDelo: "",
       clanoviKrivicnihDela: "",
       clanoviOptuzbe: "",
@@ -90,16 +135,6 @@ export default function NovaPresuda() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
-  }
-
-  function getCaseBasedReasoning(values: z.infer<typeof formSchema>) {
-    // Get case based reasoning
-    console.log("Case based reasoning", values);
-  }
-
-  function getRuleBasedReasoning(values: z.infer<typeof formSchema>) {
-    // Get rule based reasoning
-    console.log("Rule based reasoning", values);
   }
 
   return (
