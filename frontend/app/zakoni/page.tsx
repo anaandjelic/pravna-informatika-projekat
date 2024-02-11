@@ -1,3 +1,9 @@
 export default function Zakoni() {
-  return;
+  return (
+    <iframe
+      className="w-full h-full"
+      src="/html/krivicni-zakonik.html"
+      title="Krivicni Zakonik"
+    />
+  );
 }

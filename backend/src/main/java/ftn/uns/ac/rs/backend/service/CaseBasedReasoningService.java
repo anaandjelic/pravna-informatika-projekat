@@ -4,7 +4,6 @@ import ftn.uns.ac.rs.backend.dto.CaseBasedReasoningDTO;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -21,23 +20,20 @@ public class CaseBasedReasoningService {
         String rootPath = rootPathObject.toString();
 
         String pathToPythonScript = rootPath + "/case_based_reasoning.py";
+
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("python", pathToPythonScript);
+            ProcessBuilder processBuilder = new ProcessBuilder(
+                    "python",
+                    pathToPythonScript,
+                    caseBasedReasoningDTO.getCourt(),
+                    caseBasedReasoningDTO.getPlaintiff(),
+                    caseBasedReasoningDTO.getValueOfStolenThings().toString(),
+                    caseBasedReasoningDTO.getCriminalAct(),
+                    caseBasedReasoningDTO.getArticlesCriminalAct(),
+                    caseBasedReasoningDTO.getArticlesCondemnation());
             processBuilder.redirectErrorStream(true);
 
             Process process = processBuilder.start();
-
-            try (OutputStream os = process.getOutputStream()) {
-                String court = caseBasedReasoningDTO.getCourt();
-                String plaintiff = caseBasedReasoningDTO.getPlaintiff();
-                Float valueOfStolenThings = caseBasedReasoningDTO.getValueOfStolenThings();
-                String criminalAct = caseBasedReasoningDTO.getCriminalAct();
-                String articlesCriminalAct = caseBasedReasoningDTO.getArticlesCriminalAct();
-                String articlesCondemnation = caseBasedReasoningDTO.getArticlesCondemnation();
-
-                String parameters = String.join("|", court, plaintiff, valueOfStolenThings.toString(), criminalAct, articlesCriminalAct, articlesCondemnation);
-                os.write(parameters.getBytes(StandardCharsets.UTF_8));
-            }
             process.waitFor();
 
         } catch (IOException | InterruptedException e) {

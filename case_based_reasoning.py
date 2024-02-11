@@ -1,6 +1,6 @@
+import argparse
 import json
 import re
-import sys
 from pathlib import Path
 from typing import Any
 from typing import Dict
@@ -50,14 +50,13 @@ def get_case_dict(df: pd.DataFrame, index, jaccard_similarity) -> Dict[str, Any]
 def process_cases(
     court: str,
     prosecutor: str,
-    value_of_stolen_things_str,
+    value_of_stolen_things: float,
     criminal_act: str,
     articles_used: str,
     articles_condemnation: str,
 ):
     df = pd.read_csv(ROOT_DIR / 'primer.csv')
 
-    value_of_stolen_things = float(value_of_stolen_things_str)
     avg_value_of_stolen_things = df['vr_ukradenih_stvari'].mean()
     threshold = avg_value_of_stolen_things / 5
 
@@ -85,5 +84,13 @@ def process_cases(
 
 
 if __name__ == '__main__':
-    parameters = sys.stdin.readline().strip().split('|')
-    process_cases(*parameters)
+    parser = argparse.ArgumentParser(description='Case-based reasoning')
+    parser.add_argument('court', type=str, help='Court')
+    parser.add_argument('prosecutor', type=str, help='Prosecutor')
+    parser.add_argument('value_of_stolen_things', type=float, help='Value of stolen things')
+    parser.add_argument('criminal_act', type=str, help='Criminal act')
+    parser.add_argument('articles_used', type=str, help='Articles used')
+    parser.add_argument('articles_condemnation', type=str, help='Articles condemnation')
+
+    args = parser.parse_args()
+    process_cases(**vars(args))
