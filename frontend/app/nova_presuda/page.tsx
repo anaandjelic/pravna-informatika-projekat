@@ -10,6 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useState } from "react";
 
 const sudovi = [
   "Vrhovni Sud CG",
@@ -70,33 +71,9 @@ const formSchema = z.object({
   }),
 });
 
-async function getCaseBasedReasoning(values: z.infer<typeof formSchema>) {
-  const caseBasedReasoningDTO = {
-    court: values.sud,
-    caseNumber: `K ${values.brojPresude}/2024`,
-    judge: values.sudija,
-    defendant: values.optuzeni,
-    plaintiff: values.tuzilac,
-    valueOfStolenThings: values.vrednostUkradenihStvari,
-    criminalAct: values.krivicnoDelo,
-    articlesCriminalAct: values.clanoviKrivicnihDela,
-    articlesCondemnation: values.clanoviOptuzbe,
-  };
-  console.log("Case based reasoning", caseBasedReasoningDTO);
-
-  const result = await fetch("http://localhost:8080/cbr/generate-reasoning", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(caseBasedReasoningDTO),
-  }).then((response) => response);
-  console.log(result);
-}
-
 async function getRuleBasedReasoning(values: z.infer<typeof formSchema>) {
   const ruleBasedReasoningDTO = {
-    name: `K-${values.brojPresude}_2024`,
+    name: `K_${values.brojPresude}_2024`,
     defendant: values.optuzeni,
     money: values.vrednostUkradenihStvari,
     stealType: values.tipKradje,
@@ -111,7 +88,7 @@ async function getRuleBasedReasoning(values: z.infer<typeof formSchema>) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(ruleBasedReasoningDTO),
-  }).then((response) => response.json());
+  }).then((response) => response.text());
   console.log(result);
 }
 
@@ -137,6 +114,64 @@ export default function NovaPresuda() {
     console.log(values);
   }
 
+  const [caseBasedResult, setCaseBasedResult] = useState<any[]>([]);
+  const [ruleBasedResult, setRuleBasedResult] = useState<string>("");
+
+  const getCaseBasedReasoning = async (values: z.infer<typeof formSchema>) => {
+    const caseBasedReasoningDTO = {
+      court: values.sud,
+      caseNumber: `K ${values.brojPresude}/2024`,
+      judge: values.sudija,
+      defendant: values.optuzeni,
+      plaintiff: values.tuzilac,
+      valueOfStolenThings: values.vrednostUkradenihStvari,
+      criminalAct: values.krivicnoDelo,
+      articlesCriminalAct: values.clanoviKrivicnihDela,
+      articlesCondemnation: values.clanoviOptuzbe,
+    };
+    console.log("Case based reasoning", caseBasedReasoningDTO);
+    try {
+      const response = await fetch("http://localhost:8080/cbr/generate-reasoning", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(caseBasedReasoningDTO),
+      });
+      const result = await response.json();
+      setCaseBasedResult(result);
+      console.log(result);
+    } catch (error) {
+      console.error("Error fetching case based reasoning:", error);
+    }
+  };
+
+  const getRuleBasedReasoning = async (values: z.infer<typeof formSchema>) => {
+    const ruleBasedReasoningDTO = {
+      name: `K_${values.brojPresude}_2024`,
+      defendant: values.optuzeni,
+      money: values.vrednostUkradenihStvari,
+      stealType: values.tipKradje,
+      intention: values.namera,
+      stealWay: values.nacinKradje,
+    };
+    console.log("Rule based reasoning", ruleBasedReasoningDTO);
+
+    try {
+      const response = await fetch("http://localhost:8080/rbr/generate-reasoning", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(ruleBasedReasoningDTO),
+      });
+      const result = await response.text();
+      setRuleBasedResult(result);
+    } catch (error) {
+      console.error("Error fetching rule based reasoning:", error);
+    }
+  };
+
   return (
     <div className="flex h-full flex-row overflow-hidden space-x-6 p-2">
       <Card className="w-1/2 h-full">
@@ -149,7 +184,7 @@ export default function NovaPresuda() {
               <CardTitle>Nova presuda</CardTitle>
               <CardDescription>Forma za novu presudu.</CardDescription>
             </CardHeader>
-            <CardContent className="pb-0 h-[79%]">
+            <CardContent className="pb-0 h-[75%]">
               <ScrollArea
                 className="h-full"
                 type="always"
@@ -429,7 +464,7 @@ export default function NovaPresuda() {
                 </div>
               </ScrollArea>
             </CardContent>
-            <CardFooter className="w-full px-6 py-4 border-t">
+            <CardFooter className="w-full p-6 border-t">
               <div className="w-full flex gap-2">
                 <Button
                   onClick={form.handleSubmit(getCaseBasedReasoning)}
@@ -452,7 +487,40 @@ export default function NovaPresuda() {
           </form>
         </Form>
       </Card>
-      <div className="rounded-md shadow-md w-1/2 h-full"></div>
+      <div className="w-1/2 h-full space-y-6">
+        <Card className="w-full">
+          <CardHeader className="border-b">
+            <CardTitle>Case Based Reasoning</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {caseBasedResult && caseBasedResult.length > 0 ? (
+              caseBasedResult.map((caseResult, index) => (
+                <details
+                  key={index}
+                  className="mt-2 pr-3"
+                >
+                  <summary>Jaccard similarity: {`${(caseResult.jaccard_similarity * 100).toFixed(2)}%`}</summary>
+                  <pre className="rounded-md bg-slate-950 p-4">
+                    <code className="text-white break-words whitespace-pre-wrap">
+                      {JSON.stringify(caseResult, null, 2)}
+                    </code>
+                  </pre>
+                </details>
+              ))
+            ) : (
+              <div>Run case based reasoning to see results.</div>
+            )}
+          </CardContent>
+        </Card>
+        <Card className="w-full">
+          <CardHeader className="border-b">
+            <CardTitle>Rule Based Reasoning</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {ruleBasedResult ? <p>{ruleBasedResult}</p> : <div>Run rule based reasoning to see results.</div>}
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }
