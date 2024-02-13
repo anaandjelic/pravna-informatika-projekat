@@ -25,12 +25,10 @@ public class CaseBasedReasoningService {
             ProcessBuilder processBuilder = new ProcessBuilder(
                     "python",
                     pathToPythonScript,
-                    caseBasedReasoningDTO.getCourt(),
-                    caseBasedReasoningDTO.getPlaintiff(),
                     caseBasedReasoningDTO.getValueOfStolenThings().toString(),
                     caseBasedReasoningDTO.getCriminalAct(),
-                    caseBasedReasoningDTO.getArticlesCriminalAct(),
-                    caseBasedReasoningDTO.getArticlesCondemnation());
+                    caseBasedReasoningDTO.getIntention(),
+                    caseBasedReasoningDTO.getStealWay());
             processBuilder.redirectErrorStream(true);
 
             Process process = processBuilder.start();

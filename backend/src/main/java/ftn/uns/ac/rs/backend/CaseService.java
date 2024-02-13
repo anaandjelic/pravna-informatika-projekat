@@ -1,5 +1,6 @@
 package ftn.uns.ac.rs.backend;
 
+import ftn.uns.ac.rs.backend.dto.CaseBasedReasoningDTO;
 import lombok.AllArgsConstructor;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
@@ -7,13 +8,17 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 @AllArgsConstructor
@@ -199,6 +204,60 @@ public class CaseService {
 				
 		}
 		return "Not found";
+	}
+
+	public void createNewCase(CaseBasedReasoningDTO caseBasedReasoningDTO) {
+		String backendPath = System.getProperty("user.dir");
+		Path backendPathObject = Paths.get(backendPath);
+
+		Path rootPathObject = backendPathObject.getParent();
+		String rootPath = rootPathObject.toString();
+
+		String pathToCases = rootPath + "/nlp-output.csv";
+
+		List<String[]> cases = new ArrayList<>();
+		cases.add(new String[] {
+				caseBasedReasoningDTO.getCourt(),
+				caseBasedReasoningDTO.getCaseNumber(),
+				caseBasedReasoningDTO.getJudge(),
+				caseBasedReasoningDTO.getDefendant(),
+				caseBasedReasoningDTO.getPlaintiff(),
+				String.valueOf(caseBasedReasoningDTO.getValueOfStolenThings()),
+				caseBasedReasoningDTO.getCriminalAct(),
+				caseBasedReasoningDTO.getArticlesCriminalAct(),
+				caseBasedReasoningDTO.getArticlesCondemnation(),
+				caseBasedReasoningDTO.getPunishment(),
+				caseBasedReasoningDTO.getIntention(),
+				caseBasedReasoningDTO.getStealWay()
+		});
+
+		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(new FileOutputStream(pathToCases, true), StandardCharsets.UTF_8)))) {
+			cases.stream()
+					.map(this::convertToCSV)
+					.forEach(pw::println);
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+
+	public String escapeSpecialCharacters(String data) {
+		if (data == null) {
+			throw new IllegalArgumentException("Input data cannot be null");
+		}
+		String escapedData = data.replaceAll("\\R", " ");
+		if (data.contains(",") || data.contains("\"") || data.contains("'")) {
+			data = data.replace("\"", "\"\"");
+			escapedData = "\"" + data + "\"";
+		}
+		return escapedData;
+	}
+
+
+	public String convertToCSV(String[] data) {
+		return Stream.of(data)
+				.map(this::escapeSpecialCharacters)
+				.collect(Collectors.joining(","));
 	}
 
 }

@@ -1,8 +1,10 @@
 package ftn.uns.ac.rs.backend.controller;
 
 import ftn.uns.ac.rs.backend.CaseService;
+import ftn.uns.ac.rs.backend.dto.CaseBasedReasoningDTO;
 import ftn.uns.ac.rs.backend.dto.MetadataDTO;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -42,6 +44,12 @@ public class CaseController {
                         caseService.extractPunishmentArticles(caseText),
                         caseService.extractPunishment(caseText))
         );
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<Void> createNewCase(@RequestBody CaseBasedReasoningDTO caseBasedReasoningDTO) {
+        caseService.createNewCase(caseBasedReasoningDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

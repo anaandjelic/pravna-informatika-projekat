@@ -62,55 +62,55 @@ public class RuleBasedReasoningService {
         String reasoning = "PREKRŠEN ZAKON: ";
 
         if (StringUtils.substringBetween(raw_reasoning, "<export:robbery_lv1", "</export:robbery_lv1>") != null) {
-            reasoning += "Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
+            reasoning += "Član 241 Stavka 1: Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
                     " Oduzimanje tuđe pokretne stvari u nameri da njenim prisvajanjem sebi ili drugom pribavi" +
                     " protivpravnu imovinsku korist.";
         }
 
         else if (StringUtils.substringBetween(raw_reasoning, "<export:robbery_lv2", "</export:robbery_lv2>") != null) {
-            reasoning += "Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
+            reasoning += "Član 241 Stavka 2: Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
                     " Oduzimanje tuđe pokretne stvari u nameri da njenim prisvajanjem sebi ili drugom pribavi" +
                     " protivpravnu imovinsku korist. Vrednost ukradenih stvari iznad 3000e." ;
         }
 
         else if (StringUtils.substringBetween(raw_reasoning, "<export:robbery_lv3", "</export:robbery_lv3>") != null) {
-            reasoning += "Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
+            reasoning += "Član 241 Stavka 3: Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
                     " Oduzimanje tuđe pokretne stvari u nameri da njenim prisvajanjem sebi ili drugom pribavi" +
                     " protivpravnu imovinsku korist. Vrednost ukradenih stvari iznad 30000e." ;
         }
 
         else if (StringUtils.substringBetween(raw_reasoning, "<export:robbery_lv4", "</export:robbery_lv4>") != null) {
-            reasoning += "Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
+            reasoning += "Član 241 Stavka 4: Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
                     " Oduzimanje tuđe pokretne stvari u nameri da njenim prisvajanjem sebi ili drugom pribavi" +
                     " protivpravnu imovinsku korist. Učinjeno od strane grupe ili je nekom licu sa umišljanjem nanesena" +
                     " teška telesna povreda." ;
         }
 
         else if (StringUtils.substringBetween(raw_reasoning, "<export:robbery_lv5", "</export:robbery_lv5>") != null) {
-            reasoning += "Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
+            reasoning += "Član 241 Stavka 5: Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
                     " Oduzimanje tuđe pokretne stvari u nameri da njenim prisvajanjem sebi ili drugom pribavi" +
                     " protivpravnu imovinsku korist. Neko lice je sa umišljanjem lišeno života." ;
         }
 
         else if (StringUtils.substringBetween(raw_reasoning, "<export:robbery_lv6", "</export:robbery_lv6>") != null) {
-            reasoning += "Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
+            reasoning += "Član 241 Stavka 6: Upotreba sile protiv nekog lica ili pretnja da će neposredno napasti na život ili telo." +
                     " Oduzimanje tuđe pokretne stvari u nameri da njenim prisvajanjem sebi ili drugom pribavi" +
                     " protivpravnu imovinsku korist. Vrednost ukradenih stvari ne prelazi 150e, a učinilac je išao za tim" +
                     " da pribavi malu imovinsku korist." ;
         }
 
         else if (StringUtils.substringBetween(raw_reasoning, "<export:competition_outcome_arrangement_lv1", "</export:competition_outcome_arrangement_lv1>") != null) {
-            reasoning += "Dogovoren ishod sportskog ili drugog takmičenja u nameri da se sebi ili drugom pribavi korist." ;
+            reasoning += "Član 244a Stavka 1: Dogovoren ishod sportskog ili drugog takmičenja u nameri da se sebi ili drugom pribavi korist." ;
         }
 
         else if (StringUtils.substringBetween(raw_reasoning, "<export:competition_outcome_arrangement_lv2", "</export:competition_outcome_arrangement_lv2>") != null) {
-            reasoning += "Dogovoren ishod sportskog ili drugog takmičenja u nameri da se sebi ili drugom pribavi korist." +
+            reasoning += "Član 244a Stavka 2: Dogovoren ishod sportskog ili drugog takmičenja u nameri da se sebi ili drugom pribavi korist." +
                          " Vrednost pribavljene imovinske koristi prelazi iznos od 10000e.";
         }
 
 
         else if (StringUtils.substringBetween(raw_reasoning, "<export:competition_outcome_arrangement_lv3", "</export:competition_outcome_arrangement_lv3>") != null) {
-            reasoning += "Dogovoren ishod sportskog ili drugog takmičenja u nameri da se sebi ili drugom pribavi korist." +
+            reasoning += "Član 244a Stavka 3: Dogovoren ishod sportskog ili drugog takmičenja u nameri da se sebi ili drugom pribavi korist." +
                     " Vrednost pribavljene imovinske koristi prelazi iznos od 40000e.";
         }
 

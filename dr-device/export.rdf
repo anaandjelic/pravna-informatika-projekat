@@ -254,7 +254,7 @@
 </export:min_imprisonment_robbery_3>
 
 <export:robbery_lv4 rdf:about='&export;robbery_lv41'>
-     <export:defendant>Nikola</export:defendant>
+     <export:defendant>John</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof2</defeasible:proof>
 </export:robbery_lv4>

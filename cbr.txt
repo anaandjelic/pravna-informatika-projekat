@@ -1,3 +1,77 @@
-sud: OSNOVNI SUD U BARU, broj_slucaja: K 309/2010, sudija: G. Š., optuzeni: Š. N., tuzilac: Osnovno državno tužilaštvo u Baru, vr_ukradenih_stvari: 13512.89, kriv_delo: teška krađa, clanovi_kriv_dela: čl. 240. st.1. tač. 1., clanovi_osude:  čl. 4, 32, 36 i 42 Krivičnog zakonika i čl. 357, 361 i 364 ZKP, kazna: zatvor 1 godina, plaćanje 150e | Modifikovana Jaccard-ova sličnost: 0.6004357823366014
-sud: OSNOVNI SUD U BARU, broj_slucaja: K 310/2010, sudija: G. Š., optuzeni: Š. N., tuzilac: Osnovno državno tužilaštvo u Baru, vr_ukradenih_stvari: 5000.21, kriv_delo: razbojništvo, clanovi_kriv_dela: čl. 240., čl. 241 st. 2, clanovi_osude:  čl. 4, 40, 21 i 42 Krivičnog zakonika i čl. 359, 360 i 364 ZKP, kazna: zatvor 2 godina, plaćanje 200e | Modifikovana Jaccard-ova sličnost: 0.33437691044434237
-sud: VIŠI SUD U PODGORICI, broj_slucaja: K 311/2010, sudija: G. Š., optuzeni: Š. N., tuzilac: Više tužilaštvo u Podgorici, vr_ukradenih_stvari: 21022.44, kriv_delo: teška krađa, clanovi_kriv_dela: čl. 241. st.1., čl. 242., clanovi_osude:  čl. 3, 32, 33 i 43 Krivičnog zakonika i čl. 359, 361 i 364 ZKP, kazna: zatvor 3 godina, plaćanje 300e | Modifikovana Jaccard-ova sličnost: 0.23337083427944508
+[
+    {
+        "sud": "OSNOVNI SUD U BARU",
+        "broj_slucaja": "K 60 2019",
+        "sudija": "Goran Šćepanović",
+        "optuzeni": "R. M.",
+        "tuzilac": "osnovni",
+        "vr_ukradenih_stvari": "390.0",
+        "kriv_delo": "teška krađa",
+        "clanovi_kriv_dela": "čl. 240 st.1 tač.1 Krivičnog zakonika",
+        "clanovi_osude": "čl.4, 32, 36 i 42 Krivičnog zakonika;čl. 226, 229 i 374 ZKP-a",
+        "kazna": "kaznu zatvora u trajanju od 2 (dvije) godine",
+        "namera": "stealing property",
+        "nacin_kradje": "breaking into closed buildings",
+        "jaccard_similarity": "1.100"
+    },
+    {
+        "sud": "OSNOVNI SUD U BARU",
+        "broj_slucaja": "K 309 2010",
+        "sudija": "G. Š.",
+        "optuzeni": "Š. N.",
+        "tuzilac": "osnovni",
+        "vr_ukradenih_stvari": "512.89",
+        "kriv_delo": "teška krađa",
+        "clanovi_kriv_dela": "čl .240. st.1. tač. 1. Krivičnog zakonika",
+        "clanovi_osude": "čl. 4, 32, 36 i 42 Krivičnog zakonika;čl. 359, 360 i 364 ZKP",
+        "kazna": "kaznu zatvora u trajanju od 1 (jedne) godine",
+        "namera": "stealing property",
+        "nacin_kradje": "breaking into closed buildings",
+        "jaccard_similarity": "1.076"
+    },
+    {
+        "sud": "OSNOVNI SUD U PODGORICI",
+        "broj_slucaja": "K 855 2015",
+        "sudija": "Larisi Mijušković-Stamatović",
+        "optuzeni": "S.T.",
+        "tuzilac": "osnovni",
+        "vr_ukradenih_stvari": "300.0",
+        "kriv_delo": "krađa",
+        "clanovi_kriv_dela": "čl. 239 st. 1 Krivičnog zakonika Crne Gore",
+        "clanovi_osude": "čl. 3, 4, 5, 13, 15, 32, 33, 36, 42 i 43 Krivičnog zakonika Crne Gore;čl. 226, 227, 229, 239 i 374 Zakonika o krivičnom postupku",
+        "kazna": "kaznu zatvora u trajanju od 1 (jedne) godine",
+        "namera": "own illegal property benefit",
+        "nacin_kradje": "standard",
+        "jaccard_similarity": "0.249"
+    },
+    {
+        "sud": "OSNOVNI SUD U BARU",
+        "broj_slucaja": "K 457 2012",
+        "sudija": "Lekić Zoran",
+        "optuzeni": "R. M.",
+        "tuzilac": "osnovni",
+        "vr_ukradenih_stvari": "270.0",
+        "kriv_delo": "krađa",
+        "clanovi_kriv_dela": "čl. 239 st. 1 Krivičnog zakonika",
+        "clanovi_osude": "čl. 4, 5, 15, 32, 36 i 42 Krivičnog zakonika;čl. 369, čl. 370 i 374 Zakonika o krivičnom postupku",
+        "kazna": "kaznu zatvora u trajanju od 6 (šest) mjeseci",
+        "namera": "own illegal property benefit",
+        "nacin_kradje": "standard",
+        "jaccard_similarity": "0.243"
+    },
+    {
+        "sud": "OSNOVNI SUD U BARU",
+        "broj_slucaja": "K 298 2021",
+        "sudija": "Vladana Raičević",
+        "optuzeni": "J. E.",
+        "tuzilac": "osnovni",
+        "vr_ukradenih_stvari": "160.0",
+        "kriv_delo": "razbojnička krađa",
+        "clanovi_kriv_dela": "čl.241 st.1 Krivičnog zakonika Crne Gore",
+        "clanovi_osude": "čl. 3, 4, 5, 13, 15, 32, 36, 42 i 51 Krivičnog zakonika Crne Gore;čl.226, 229 i 374 Zakonika o krivičnom postupku",
+        "kazna": "kaznu zatvora u trajanju od 1 (jedne) godine i 6 (šest) mjeseci",
+        "namera": "uses force",
+        "nacin_kradje": "group_or_seriously_injured",
+        "jaccard_similarity": "0.138"
+    }
+]

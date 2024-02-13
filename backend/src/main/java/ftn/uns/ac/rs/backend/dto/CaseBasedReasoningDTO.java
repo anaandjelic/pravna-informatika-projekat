@@ -10,11 +10,14 @@ public class CaseBasedReasoningDTO {
     private String criminalAct;
     private String articlesCriminalAct;
     private String articlesCondemnation;
+    private String intention;
+    private String stealWay;
+    private String punishment;
 
     public CaseBasedReasoningDTO() {
     }
 
-    public CaseBasedReasoningDTO(String court, String caseNumber, String judge, String defendant, String plaintiff, Float valueOfStolenThings, String criminalAct, String articlesCriminalAct, String articlesCondemnation, String punishment) {
+    public CaseBasedReasoningDTO(String court, String caseNumber, String judge, String defendant, String plaintiff, Float valueOfStolenThings, String criminalAct, String articlesCriminalAct, String articlesCondemnation, String intention, String stealWay, String punishment) {
         this.court = court;
         this.caseNumber = caseNumber;
         this.judge = judge;
@@ -24,6 +27,9 @@ public class CaseBasedReasoningDTO {
         this.criminalAct = criminalAct;
         this.articlesCriminalAct = articlesCriminalAct;
         this.articlesCondemnation = articlesCondemnation;
+        this.intention = intention;
+        this.stealWay = stealWay;
+        this.punishment = punishment;
     }
 
     public String getCourt() {
@@ -98,4 +104,27 @@ public class CaseBasedReasoningDTO {
         this.articlesCondemnation = articlesCondemnation;
     }
 
+    public String getIntention() {
+        return intention;
+    }
+
+    public void setIntention(String intention) {
+        this.intention = intention;
+    }
+
+    public String getStealWay() {
+        return stealWay;
+    }
+
+    public void setStealWay(String stealWay) {
+        this.stealWay = stealWay;
+    }
+
+    public String getPunishment() {
+        return punishment;
+    }
+
+    public void setPunishment(String punishment) {
+        this.punishment = punishment;
+    }
 }
