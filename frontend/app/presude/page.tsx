@@ -5,12 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { FilePath } from "@/lib/file_path";
 import { FileText } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HTMLPresude() {
   const [presude, setPresude] = useState<FilePath[]>([]);
 
   const [selectedHTMLIndex, setSelectedHTMLIndex] = useState<number>(0);
+  const [htmlText, setHtmlText] = useState<string>("");
   const handleSelect = (index: number) => {
     setSelectedHTMLIndex(index);
   };
@@ -21,13 +22,21 @@ export default function HTMLPresude() {
         .then((res) => res.json())
         .then((data) => setPresude(data));
     };
-
     getHtmlFiles();
   }, []);
 
-  const htmlToShow = useMemo(() => {
-    return presude[selectedHTMLIndex]?.path;
-  }, [presude, selectedHTMLIndex]);
+  useEffect(() => {
+    const getHtmlText = async () => {
+      fetch(`http://localhost:3000/api/htmls/get_text?file=${encodeURI(presude[selectedHTMLIndex].path)}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setHtmlText(data);
+        });
+    };
+    if (presude[selectedHTMLIndex] !== undefined) {
+      getHtmlText();
+    }
+  }, [selectedHTMLIndex, presude]);
 
   return (
     <div className="flex h-full flex-row overflow-hidden space-x-6 pr-2 pb-2">
@@ -56,10 +65,12 @@ export default function HTMLPresude() {
         </CardContent>
       </Card>
       <div className="flex flex-col flex-grow space-y-6">
-        <iframe
-          className="flex-grow w-full"
-          src={htmlToShow}
-        />
+        <ScrollArea className="w-full h-2/3">
+          <div
+            className="flex-grow w-full"
+            dangerouslySetInnerHTML={{ __html: htmlText }}
+          />
+        </ScrollArea>
         <Card className="w-full h-72">
           <CardHeader className="p-3">
             <CardTitle className="text-lg">Tabela atributa presude</CardTitle>

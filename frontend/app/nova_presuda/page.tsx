@@ -184,7 +184,7 @@ export default function NovaPresuda() {
               <CardTitle>Nova presuda</CardTitle>
               <CardDescription>Forma za novu presudu.</CardDescription>
             </CardHeader>
-            <CardContent className="pb-0 h-[75%]">
+            <CardContent className="pb-0 min-h-[500px] h-[75%]">
               <ScrollArea
                 className="h-full"
                 type="always"
