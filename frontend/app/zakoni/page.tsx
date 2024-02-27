@@ -1,9 +1,13 @@
-export default function Zakoni() {
+import { getFileText } from "@/lib/get_text";
+
+export default async function Zakoni() {
+  const htmlText: string = await getFileText("public/html/krivicni-zakonik.html");
+
   return (
-    <iframe
+    <div
       className="w-full h-full"
-      src="/html/krivicni-zakonik.html"
       title="Krivicni Zakonik"
-    />
+      dangerouslySetInnerHTML={{ __html: htmlText }}
+    ></div>
   );
 }

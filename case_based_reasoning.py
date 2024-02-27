@@ -41,9 +41,7 @@ def calc_modified_jaccard_similarity(
         modified_diff = (1 - (value_diff / threshold)) / 10  # max +0.1
         jaccard_similarity += modified_diff
     else:
-        modified_diff = value_diff / (
-            10 * avg_value_of_stolen_things
-        )  # if diff = 10*avg, then -1
+        modified_diff = value_diff / (10 * avg_value_of_stolen_things)  # if diff = 10*avg, then -1
         jaccard_similarity -= modified_diff
 
     return jaccard_similarity
@@ -59,9 +57,7 @@ def get_case_dict(df: pd.DataFrame, index, jaccard_similarity) -> Dict[str, Any]
     return case
 
 
-def process_cases(
-    value_of_stolen_things: str, criminal_act: str, intention: str, steal_way: str
-):
+def process_cases(value_of_stolen_things: str, criminal_act: str, intention: str, steal_way: str):
     df = pd.read_csv(ROOT_DIR / "nlp-output.csv")
 
     avg_value_of_stolen_things = df["vr_ukradenih_stvari"].mean()
@@ -70,13 +66,7 @@ def process_cases(
     cases: List[Dict[str, Any]] = []
     for index, row in df.iterrows():
         jaccard_similarity = calc_jaccard_similarity(
-            get_case_set(
-                values=(
-                    str(val)
-                    for col, val in row.items()
-                    if col not in COLUMNS_TO_EXCLUDE
-                )
-            ),
+            get_case_set(values=(str(val) for col, val in row.items() if col not in COLUMNS_TO_EXCLUDE)),
             get_case_set(values=(criminal_act, intention, steal_way)),
         )
 
@@ -97,14 +87,10 @@ def process_cases(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Case-based reasoning")
-    parser.add_argument(
-        "value_of_stolen_things", type=str, help="Value of stolen things"
-    )
+    parser.add_argument("value_of_stolen_things", type=str, help="Value of stolen things")
     parser.add_argument("criminal_act", type=str, help="Criminal act")
     parser.add_argument("intention", type=str, help="Criminal act intention")
-    parser.add_argument(
-        "steal_way", type=str, help="The way a criminal act of stealing has occurred"
-    )
+    parser.add_argument("steal_way", type=str, help="The way a criminal act of stealing has occurred")
 
     args = parser.parse_args()
     process_cases(**vars(args))
