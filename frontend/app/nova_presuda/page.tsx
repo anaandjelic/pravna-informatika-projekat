@@ -41,10 +41,28 @@ const sudovi = [
   "Sud za prekršaje u Podgorici",
 ] as const;
 
-const robberyNamera = ["keeps_stolen_thing", "uses_force", "threatens_to_attack"] as const;
-const competitionNamera = ["own_benefit", "someones_benefit"] as const;
+const nameraKradje = [
+  "own illegal property benefit",
+  "stealing property",
+  "keeps_stolen_thing",
+  "uses_force",
+  "threatens_to_attack",
+  "someone's illegal property benefit",
+  "appropriates movable property",
+] as const;
 
-const nacinKradje = ["standard", "group_or_seriously_injured", "deprived_of_life"] as const;
+const nacinKradje = [
+  "standard",
+  "breaking into closed buildings",
+  "group",
+  "very dangerous",
+  "very rude",
+  "with weapon",
+  "during natural accident",
+  "taking advantage of people’s helplessness",
+  "group_or_seriously_injured",
+  "deprived_of_life",
+] as const;
 
 const formSchema = z.object({
   sud: z.enum(sudovi, {
@@ -60,37 +78,19 @@ const formSchema = z.object({
   krivicnoDelo: z.string().min(2).max(100),
   clanoviKrivicnihDela: z.string().min(2).max(100),
   clanoviOptuzbe: z.string().min(2).max(100),
-  tipKradje: z.enum(["robbery", "competition_outcome_arrangement"], {
+  tipKradje: z.enum(["Theft", "Serious Theft", "Robbery Theft", "Fraud"], {
     required_error: "Izaberite jedan tip krađe.",
   }),
-  namera: z.enum([...robberyNamera, ...competitionNamera], {
+  namera: z.enum(nameraKradje, {
     required_error: "Izaberite jednu nameru.",
   }),
   nacinKradje: z.enum(nacinKradje, {
     required_error: "Izaberite jedan način krađe.",
   }),
+  sankcija: z.string().max(100),
+  kazna: z.string().max(100),
+  obrazlozenje: z.string().max(1000),
 });
-
-async function getRuleBasedReasoning(values: z.infer<typeof formSchema>) {
-  const ruleBasedReasoningDTO = {
-    name: `K_${values.brojPresude}_2024`,
-    defendant: values.optuzeni,
-    money: values.vrednostUkradenihStvari,
-    stealType: values.tipKradje,
-    intention: values.namera,
-    stealWay: values.nacinKradje,
-  };
-  console.log("Rule based reasoning", ruleBasedReasoningDTO);
-
-  const result = await fetch("http://localhost:8080/rbr/generate-reasoning", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(ruleBasedReasoningDTO),
-  }).then((response) => response.text());
-  console.log(result);
-}
 
 export default function NovaPresuda() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -103,6 +103,9 @@ export default function NovaPresuda() {
       krivicnoDelo: "",
       clanoviKrivicnihDela: "",
       clanoviOptuzbe: "",
+      sankcija: "",
+      kazna: "",
+      obrazlozenje: "",
     },
   });
   const { watch } = form;
@@ -128,6 +131,9 @@ export default function NovaPresuda() {
       criminalAct: values.krivicnoDelo,
       articlesCriminalAct: values.clanoviKrivicnihDela,
       articlesCondemnation: values.clanoviOptuzbe,
+      intention: values.namera,
+      stealWay: values.nacinKradje,
+      punishment: values.kazna,
     };
     console.log("Case based reasoning", caseBasedReasoningDTO);
     try {
@@ -169,6 +175,77 @@ export default function NovaPresuda() {
       setRuleBasedResult(result);
     } catch (error) {
       console.error("Error fetching rule based reasoning:", error);
+    }
+  };
+
+  const getIntentionOptions = () => {
+    switch (tipKradje) {
+      case "Theft":
+        return (
+          <>
+            <SelectItem value="own illegal property benefit">Za sopstvenu korist</SelectItem>
+            <SelectItem value="someone's illegal property benefit">Za tudju korist</SelectItem>
+          </>
+        );
+      case "Serious Theft":
+        return (
+          <>
+            <SelectItem value="stealing property">Kradja imovine</SelectItem>
+          </>
+        );
+      case "Robbery Theft":
+        return (
+          <>
+            <SelectItem value="keeps_stolen_thing">Čuva ukradenu stvar</SelectItem>
+            <SelectItem value="uses_force">Koristi silu</SelectItem>
+            <SelectItem value="threatens_to_attack">Pretnja napada</SelectItem>
+          </>
+        );
+      case "Fraud":
+        return (
+          <>
+            <SelectItem value="own illegal property benefit">Za sopstvenu korist</SelectItem>
+            <SelectItem value="someone's illegal property benefit">Za tudju korist</SelectItem>
+            <SelectItem value="appropriates movable property">Prisvaja pokretnu imovinu</SelectItem>
+          </>
+        );
+      default:
+        return null;
+    }
+  };
+
+  const getStealWayOptions = () => {
+    switch (tipKradje) {
+      case "Fraud":
+      case "Theft":
+        return (
+          <>
+            <SelectItem value="standard">Standardno</SelectItem>
+          </>
+        );
+      case "Serious Theft":
+        return (
+          <>
+            <SelectItem value="breaking into closed buildings">Provala u zatvoreno imanje</SelectItem>
+            <SelectItem value="group">Grupno</SelectItem>
+            <SelectItem value="very dangerous">Veoma opasno</SelectItem>
+            <SelectItem value="very rude">Veoma bezobrazno</SelectItem>
+            <SelectItem value="with weapon">Oruzjem</SelectItem>
+            <SelectItem value="during natural accident">Tokom prirodnih nepogoda</SelectItem>
+            <SelectItem value="taking advantage of people’s helplessness">Iskoriscavanje ljudske nemoći</SelectItem>
+          </>
+        );
+      case "Robbery Theft":
+        return (
+          <>
+            <SelectItem value="standard">Običan</SelectItem>
+            <SelectItem value="group_or_seriously_injured">Grupno ili nanete teške povrede</SelectItem>
+            <SelectItem value="deprived_of_life">Lišen života</SelectItem>
+          </>
+        );
+
+      default:
+        return null;
     }
   };
 
@@ -344,10 +421,10 @@ export default function NovaPresuda() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="robbery">Razbojništvo</SelectItem>
-                            <SelectItem value="competition_outcome_arrangement">
-                              Dogovaranje ishoda takmičenja
-                            </SelectItem>
+                            <SelectItem value="Theft">Kradja</SelectItem>
+                            <SelectItem value="Serious Theft">Ozbiljna Kradja</SelectItem>
+                            <SelectItem value="Robbery Theft">Razbojnistvo</SelectItem>
+                            <SelectItem value="Fraud">Prevara</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -371,20 +448,7 @@ export default function NovaPresuda() {
                                   <SelectValue placeholder="Izaberite nameru" />
                                 </SelectTrigger>
                               </FormControl>
-                              <SelectContent>
-                                {tipKradje === "robbery" ? (
-                                  <>
-                                    <SelectItem value="keeps_stolen_thing">Čuva ukradenu stvar</SelectItem>
-                                    <SelectItem value="uses_force">Upotreba sile</SelectItem>
-                                    <SelectItem value="threatens_to_attack">Pretnja napadom</SelectItem>
-                                  </>
-                                ) : (
-                                  <>
-                                    <SelectItem value="own_benefit">Sopstveni interes</SelectItem>
-                                    <SelectItem value="someones_benefit">Interes nekog drugog</SelectItem>
-                                  </>
-                                )}
-                              </SelectContent>
+                              <SelectContent>{getIntentionOptions()}</SelectContent>
                             </Select>
                             <FormMessage />
                           </FormItem>
@@ -407,17 +471,7 @@ export default function NovaPresuda() {
                                   <SelectValue placeholder="Izaberite način krađe" />
                                 </SelectTrigger>
                               </FormControl>
-                              <SelectContent>
-                                <SelectItem value="standard">Običan</SelectItem>
-                                {tipKradje === "robbery" && (
-                                  <>
-                                    <SelectItem value="group_or_seriously_injured">
-                                      Grupno ili nanete teške povrede
-                                    </SelectItem>
-                                    <SelectItem value="deprived_of_life">Lišen života</SelectItem>
-                                  </>
-                                )}
-                              </SelectContent>
+                              <SelectContent>{getStealWayOptions()}</SelectContent>
                             </Select>
                             <FormMessage />
                           </FormItem>
@@ -454,6 +508,45 @@ export default function NovaPresuda() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Članovi optužbe</FormLabel>
+                        <FormControl>
+                          <Input {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <br />
+                  <div className="w-full border-t"></div>
+                  <br />
+                  <FormField
+                    name="sankcija"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Sankcija</FormLabel>
+                        <FormControl>
+                          <Input {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    name="kazna"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Kazna</FormLabel>
+                        <FormControl>
+                          <Input {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    name="obrazlozenje"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Obrazlozenje</FormLabel>
                         <FormControl>
                           <Input {...field} />
                         </FormControl>
