@@ -23,7 +23,7 @@
 <Ind uri='&proof-export;proof2'>proof2</Ind>
 </oid>
 <Literal>
-<RDF_resource uri='robbery_lv4Nikola'/>
+<RDF_resource uri='robbery_lv4John'/>
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
@@ -32,24 +32,24 @@
 <defeasible_body_grounds>
 <Definitely_Proved>
 <Literal>
-<RDF_resource uri='&lc;K-69_2024'/>
+<RDF_resource uri='&lc;case01'/>
 </Literal>
 <Definite_Proof>
 <strict_clause>
 <Fact>
-<RDF_resource uri='&lc;K-69_2024'/>
+<RDF_resource uri='&lc;case01'/>
 </Fact>
 </strict_clause>
 </Definite_Proof>
 </Definitely_Proved>
 <Definitely_Proved>
 <Literal>
-<RDF_resource uri='&lc;K-69_2024'/>
+<RDF_resource uri='&lc;case01'/>
 </Literal>
 <Definite_Proof>
 <strict_clause>
 <Fact>
-<RDF_resource uri='&lc;K-69_2024'/>
+<RDF_resource uri='&lc;case01'/>
 </Fact>
 </strict_clause>
 </Definite_Proof>
