@@ -147,7 +147,6 @@ export default function NovaPresuda() {
     };
 
     try {
-      console.log("sending");
       const response = await fetch("http://localhost:3000/api/save_case", {
         method: "POST",
         headers: {
