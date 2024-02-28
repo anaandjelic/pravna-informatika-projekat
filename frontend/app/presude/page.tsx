@@ -12,6 +12,7 @@ export default function HTMLPresude() {
 
   const [selectedHTMLIndex, setSelectedHTMLIndex] = useState<number>(0);
   const [htmlText, setHtmlText] = useState<string>("");
+  const [attributes, setAttributes] = useState<Object>({});
   const handleSelect = (index: number) => {
     setSelectedHTMLIndex(index);
   };
@@ -35,6 +36,12 @@ export default function HTMLPresude() {
     };
     if (presude[selectedHTMLIndex] !== undefined) {
       getHtmlText();
+      fetch(`http://localhost:8080/case/extract/${encodeURI(presude[selectedHTMLIndex].stem)}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setAttributes(data);
+        })
+        .catch((err) => {});
     }
   }, [selectedHTMLIndex, presude]);
 
@@ -73,25 +80,18 @@ export default function HTMLPresude() {
         </ScrollArea>
         <Card className="w-full h-72">
           <CardHeader className="p-3">
-            <CardTitle className="text-lg">Tabela atributa presude</CardTitle>
+            <CardTitle className="text-lg">Atributi presude</CardTitle>
           </CardHeader>
           <CardContent>
             <ScrollArea
               className="w-full h-56"
               type="always"
             >
-              {/* TODO: Tabela atributa ovde */}
-              <p>Some text</p>
-              <p>Some text</p>
-              <p>Some text</p>
-              <p>Some text</p>
-              <p>Some text</p>
-              <p>Some text</p>
-              <p>Some text</p>
-              <p>Some text</p>
-              <p>Some text</p>
-              <p>Some text</p>
-              <p>Some text</p>
+              <pre className="rounded-md bg-slate-950 p-4">
+                <code className="text-white break-words whitespace-pre-wrap">
+                  {JSON.stringify(attributes, null, 2)}
+                </code>
+              </pre>
             </ScrollArea>
           </CardContent>
         </Card>

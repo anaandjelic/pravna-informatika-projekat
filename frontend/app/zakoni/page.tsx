@@ -1,4 +1,4 @@
-import { getFileText } from "@/lib/get_text";
+import { getFileText } from "@/lib/file_utils";
 
 export default async function Zakoni() {
   const htmlText: string = await getFileText("public/html/krivicni-zakonik.html");

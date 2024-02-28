@@ -35,7 +35,6 @@ public class CaseService {
 	}
 
 	public String getCaseText(String caseNumber) throws IOException {
-		caseNumber = caseNumber.replace('-', ' ');
 		Resource resource = resourceLoader.getResource("classpath:cases/" + caseNumber + ".pdf");
 		Path path = Paths.get(resource.getURI());
 		File file = new File(path.toString());
