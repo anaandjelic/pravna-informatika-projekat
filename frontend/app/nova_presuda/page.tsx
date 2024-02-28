@@ -111,11 +111,54 @@ export default function NovaPresuda() {
   const { watch } = form;
   const tipKradje = watch("tipKradje");
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const caseDTO = {
+      court: values.sud,
+      caseNumber: `K ${values.brojPresude}/2024`,
+      judge: values.sudija,
+      defendant: values.optuzeni,
+      plaintiff: values.tuzilac,
+      valueOfStolenThings: values.vrednostUkradenihStvari,
+      criminalAct: values.krivicnoDelo,
+      articlesCriminalAct: values.clanoviKrivicnihDela,
+      articlesCondemnation: values.clanoviOptuzbe,
+      intention: values.namera,
+      stealWay: values.nacinKradje,
+      punishment: values.kazna,
+    };
+    console.log("Submitting case", caseDTO);
+    try {
+      const response = await fetch("http://localhost:8080/case/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(caseDTO),
+      });
+    } catch (error) {
+      console.error("Error fetching case based reasoning:", error);
+    }
+
+    const caseToSave = {
+      ...caseDTO,
+      sanction: values.sankcija,
+      explanation: values.obrazlozenje,
+      fileName: `K ${values.brojPresude} 2024`,
+    };
+
+    try {
+      console.log("sending");
+      const response = await fetch("http://localhost:3000/api/save_case", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(caseToSave),
+      });
+    } catch (error) {
+      console.error("Error saving case:", error);
+    }
+  };
 
   const [caseBasedResult, setCaseBasedResult] = useState<any[]>([]);
   const [ruleBasedResult, setRuleBasedResult] = useState<string>("");

@@ -1,4 +1,4 @@
-import { getFileText } from "@/lib/get_text";
+import { getFileText } from "@/lib/file_utils";
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 
