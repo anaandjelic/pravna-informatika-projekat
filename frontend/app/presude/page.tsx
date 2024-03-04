@@ -87,11 +87,16 @@ export default function HTMLPresude() {
               className="w-full h-56"
               type="always"
             >
-              <pre className="rounded-md bg-slate-950 p-4">
-                <code className="text-white break-words whitespace-pre-wrap">
-                  {JSON.stringify(attributes, null, 2)}
-                </code>
-              </pre>
+              <table className="min-w-full divide-y divide-gray-200">
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {Object.entries(attributes).map(([key, value], idx) => (
+                    <tr key={idx}>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{key}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{JSON.stringify(value)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </ScrollArea>
           </CardContent>
         </Card>
