@@ -41,25 +41,34 @@ const sudovi = [
   "Sud za prekršaje u Podgorici",
 ] as const;
 
+const kradje = [
+  "robbery",
+  "competition_outcome_arrangement",
+  "kradja",
+  "teska kradja",
+  "razbojnicka kradja",
+  "prevara",
+] as const;
+
 const nameraKradje = [
-  "own illegal property benefit",
-  "stealing property",
+  "own_illegal_property_benefit",
+  "stealing_property",
   "keeps_stolen_thing",
   "uses_force",
   "threatens_to_attack",
-  "someone's illegal property benefit",
-  "appropriates movable property",
+  "someones_illegal_property_benefit",
+  "appropriates_movable_property",
 ] as const;
 
 const nacinKradje = [
   "standard",
-  "breaking into closed buildings",
+  "breaking_into_closed_buildings",
   "group",
-  "very dangerous",
-  "very rude",
-  "with weapon",
-  "during natural accident",
-  "taking advantage of people’s helplessness",
+  "very_dangerous",
+  "very_rude",
+  "with_weapon",
+  "during_natural_accident",
+  "taking_advantage_of_peoples_helplessness",
   "group_or_seriously_injured",
   "deprived_of_life",
 ] as const;
@@ -68,17 +77,16 @@ const formSchema = z.object({
   sud: z.enum(sudovi, {
     required_error: "Izaberite jedan od sudova.",
   }),
-  sudija: z.string().min(5).max(100),
+  sudija: z.string().min(2).max(100),
   brojPresude: z.number().int().positive(),
-  optuzeni: z.string().min(5).max(100),
+  optuzeni: z.string().min(2).max(100),
   tuzilac: z.enum(["osnovni", "visi"], {
     required_error: "Izaberite jedan tip tužioca.",
   }),
   vrednostUkradenihStvari: z.number().int().positive(),
-  krivicnoDelo: z.string().min(2).max(100),
   clanoviKrivicnihDela: z.string().min(2).max(100),
   clanoviOptuzbe: z.string().min(2).max(100),
-  tipKradje: z.enum(["Theft", "Serious Theft", "Robbery Theft", "Fraud"], {
+  tipKradje: z.enum(kradje, {
     required_error: "Izaberite jedan tip krađe.",
   }),
   namera: z.enum(nameraKradje, {
@@ -100,7 +108,6 @@ export default function NovaPresuda() {
       brojPresude: 1,
       optuzeni: "",
       vrednostUkradenihStvari: 500,
-      krivicnoDelo: "",
       clanoviKrivicnihDela: "",
       clanoviOptuzbe: "",
       sankcija: "",
@@ -112,6 +119,7 @@ export default function NovaPresuda() {
   const tipKradje = watch("tipKradje");
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const { stealType, intention, stealWay } = translate(values.tipKradje, values.namera, values.nacinKradje);
     const caseDTO = {
       court: values.sud,
       caseNumber: `K ${values.brojPresude}/2024`,
@@ -119,11 +127,11 @@ export default function NovaPresuda() {
       defendant: values.optuzeni,
       plaintiff: values.tuzilac,
       valueOfStolenThings: values.vrednostUkradenihStvari,
-      criminalAct: values.krivicnoDelo,
+      criminalAct: stealType,
       articlesCriminalAct: values.clanoviKrivicnihDela,
       articlesCondemnation: values.clanoviOptuzbe,
-      intention: values.namera,
-      stealWay: values.nacinKradje,
+      intention,
+      stealWay,
       punishment: values.kazna,
     };
     console.log("Submitting case", caseDTO);
@@ -159,10 +167,48 @@ export default function NovaPresuda() {
     }
   };
 
+  const translate = (
+    stealType: (typeof kradje)[number],
+    intention: (typeof nameraKradje)[number],
+    stealWay: (typeof nacinKradje)[number]
+  ) => {
+    const translations = {
+      // tip kradje
+      robbery: "razbojnistvo",
+      competition_outcome_arrangement: "dogovaranje ishoda takmicenja",
+      kradja: "kradja",
+      "teska kradja": "teska kradja",
+      "razbojnicka kradja": "razbojnicka kradja",
+      prevara: "prevara",
+      // intention and steal ways
+      keeps_stolen_thing: "zadrzava ukradenu imovinu",
+      uses_force: "koristi silu",
+      threatens_to_attack: "kreti napadom",
+      own_benefit: "za sopstvenu korist",
+      someones_benefit: "za tudju korist",
+      standard: "standardno",
+      group_or_seriously_injured: "grupno ili ozbiljno povredjen",
+      deprived_of_life: "lisen zivota",
+      own_illegal_property_benefit: "za sopstvenu korist",
+      someones_illegal_property_benefit: "za tudju korist",
+      stealing_property: "kradja imovine",
+      appropriates_movable_property: "prisvaja pokretnu imovinu",
+      breaking_into_closed_buildings: "provala u zatvoreno imanje",
+      group: "grupno",
+      very_dangerous: "veoma opasno",
+      very_rude: "veoma bezobrazno",
+      with_weapon: "oruzjem",
+      during_natural_accident: "tokom prirodnih nepogoda",
+      taking_advantage_of_peoples_helplessness: "iskoriscava ljudske nemoci",
+    };
+    return { stealType: translations[stealType], intention: translations[intention], stealWay: translations[stealWay] };
+  };
+
   const [caseBasedResult, setCaseBasedResult] = useState<any[]>([]);
   const [ruleBasedResult, setRuleBasedResult] = useState<string>("");
 
   const getCaseBasedReasoning = async (values: z.infer<typeof formSchema>) => {
+    const { stealType, intention, stealWay } = translate(values.tipKradje, values.namera, values.nacinKradje);
     const caseBasedReasoningDTO = {
       court: values.sud,
       caseNumber: `K ${values.brojPresude}/2024`,
@@ -170,11 +216,11 @@ export default function NovaPresuda() {
       defendant: values.optuzeni,
       plaintiff: values.tuzilac,
       valueOfStolenThings: values.vrednostUkradenihStvari,
-      criminalAct: values.krivicnoDelo,
+      criminalAct: stealType,
       articlesCriminalAct: values.clanoviKrivicnihDela,
       articlesCondemnation: values.clanoviOptuzbe,
-      intention: values.namera,
-      stealWay: values.nacinKradje,
+      intention,
+      stealWay,
       punishment: values.kazna,
     };
     console.log("Case based reasoning", caseBasedReasoningDTO);
@@ -222,20 +268,35 @@ export default function NovaPresuda() {
 
   const getIntentionOptions = () => {
     switch (tipKradje) {
-      case "Theft":
+      case "robbery":
         return (
           <>
-            <SelectItem value="own illegal property benefit">Za sopstvenu korist</SelectItem>
-            <SelectItem value="someone's illegal property benefit">Za tudju korist</SelectItem>
+            <SelectItem value="keeps_stolen_thing">Zadrzava ukradenu imovinu</SelectItem>
+            <SelectItem value="uses_force">Koristi silu</SelectItem>
+            <SelectItem value="threatens_to_attack">Preti napadom</SelectItem>
           </>
         );
-      case "Serious Theft":
+      case "competition_outcome_arrangement":
         return (
           <>
-            <SelectItem value="stealing property">Kradja imovine</SelectItem>
+            <SelectItem value="own_benefit">Za sopstvenu korist</SelectItem>
+            <SelectItem value="someones_benefit">Za tudju korist</SelectItem>
           </>
         );
-      case "Robbery Theft":
+      case "kradja":
+        return (
+          <>
+            <SelectItem value="own_illegal_property_benefit">Za sopstvenu korist</SelectItem>
+            <SelectItem value="someones_illegal_property_benefit">Za tudju korist</SelectItem>
+          </>
+        );
+      case "teska kradja":
+        return (
+          <>
+            <SelectItem value="stealing_property">Kradja imovine</SelectItem>
+          </>
+        );
+      case "razbojnicka kradja":
         return (
           <>
             <SelectItem value="keeps_stolen_thing">Čuva ukradenu stvar</SelectItem>
@@ -243,12 +304,12 @@ export default function NovaPresuda() {
             <SelectItem value="threatens_to_attack">Pretnja napada</SelectItem>
           </>
         );
-      case "Fraud":
+      case "prevara":
         return (
           <>
-            <SelectItem value="own illegal property benefit">Za sopstvenu korist</SelectItem>
-            <SelectItem value="someone's illegal property benefit">Za tudju korist</SelectItem>
-            <SelectItem value="appropriates movable property">Prisvaja pokretnu imovinu</SelectItem>
+            <SelectItem value="own_illegal_property_benefit">Za sopstvenu korist</SelectItem>
+            <SelectItem value="someones_illegal_property_benefit">Za tuđu korist</SelectItem>
+            <SelectItem value="appropriates_movable_property">Prisvaja pokretnu imovinu</SelectItem>
           </>
         );
       default:
@@ -258,26 +319,35 @@ export default function NovaPresuda() {
 
   const getStealWayOptions = () => {
     switch (tipKradje) {
-      case "Fraud":
-      case "Theft":
+      case "robbery":
+        return (
+          <>
+            <SelectItem value="standard">Standardno</SelectItem>
+            <SelectItem value="group_or_seriously_injured">Grupno ili ozbiljno povređen</SelectItem>
+            <SelectItem value="deprived_of_life">Lišen života</SelectItem>
+          </>
+        );
+      case "competition_outcome_arrangement":
+      case "prevara":
+      case "kradja":
         return (
           <>
             <SelectItem value="standard">Standardno</SelectItem>
           </>
         );
-      case "Serious Theft":
+      case "teska kradja":
         return (
           <>
-            <SelectItem value="breaking into closed buildings">Provala u zatvoreno imanje</SelectItem>
+            <SelectItem value="breaking_into_closed_buildings">Provala u zatvoreno imanje</SelectItem>
             <SelectItem value="group">Grupno</SelectItem>
-            <SelectItem value="very dangerous">Veoma opasno</SelectItem>
-            <SelectItem value="very rude">Veoma bezobrazno</SelectItem>
-            <SelectItem value="with weapon">Oruzjem</SelectItem>
-            <SelectItem value="during natural accident">Tokom prirodnih nepogoda</SelectItem>
-            <SelectItem value="taking advantage of people’s helplessness">Iskoriscavanje ljudske nemoći</SelectItem>
+            <SelectItem value="very_dangerous">Veoma opasno</SelectItem>
+            <SelectItem value="very_rude">Veoma bezobrazno</SelectItem>
+            <SelectItem value="with_weapon">Oruzjem</SelectItem>
+            <SelectItem value="during_natural_accident">Tokom prirodnih nepogoda</SelectItem>
+            <SelectItem value="taking_advantage_of_peoples_helplessness">Iskoriscavanje ljudske nemoći</SelectItem>
           </>
         );
-      case "Robbery Theft":
+      case "razbojnicka kradja":
         return (
           <>
             <SelectItem value="standard">Običan</SelectItem>
@@ -463,10 +533,14 @@ export default function NovaPresuda() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="Theft">Kradja</SelectItem>
-                            <SelectItem value="Serious Theft">Ozbiljna Kradja</SelectItem>
-                            <SelectItem value="Robbery Theft">Razbojnistvo</SelectItem>
-                            <SelectItem value="Fraud">Prevara</SelectItem>
+                            <SelectItem value="robbery">(*) Razbojništvo</SelectItem>
+                            <SelectItem value="competition_outcome_arrangement">
+                              (*) Dogovaranje ishoda takmičenja
+                            </SelectItem>
+                            <SelectItem value="kradja">Kradja</SelectItem>
+                            <SelectItem value="teska kradja">Teška Kradja</SelectItem>
+                            <SelectItem value="razbojnicka kradja">Razbojnička krađa</SelectItem>
+                            <SelectItem value="prevara">Prevara</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -521,42 +595,6 @@ export default function NovaPresuda() {
                       />
                     )}
                   </div>
-                  <FormField
-                    name="krivicnoDelo"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Krivično delo</FormLabel>
-                        <FormControl>
-                          <Input {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    name="clanoviKrivicnihDela"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Članovi krivičnih dela</FormLabel>
-                        <FormControl>
-                          <Input {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    name="clanoviOptuzbe"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Članovi optužbe</FormLabel>
-                        <FormControl>
-                          <Input {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
                   <br />
                   <div className="w-full border-t"></div>
                   <br />
@@ -589,6 +627,30 @@ export default function NovaPresuda() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Obrazlozenje</FormLabel>
+                        <FormControl>
+                          <Input {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    name="clanoviKrivicnihDela"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Članovi krivičnih dela</FormLabel>
+                        <FormControl>
+                          <Input {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    name="clanoviOptuzbe"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Članovi optužbe</FormLabel>
                         <FormControl>
                           <Input {...field} />
                         </FormControl>
@@ -635,11 +697,16 @@ export default function NovaPresuda() {
                   className="mt-2 pr-3"
                 >
                   <summary>Jaccard similarity: {`${(caseResult.jaccard_similarity * 100).toFixed(2)}%`}</summary>
-                  <pre className="rounded-md bg-slate-950 p-4">
-                    <code className="text-white break-words whitespace-pre-wrap">
-                      {JSON.stringify(caseResult, null, 2)}
-                    </code>
-                  </pre>
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {Object.entries(caseResult).map(([key, value], idx) => (
+                        <tr key={idx}>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{key}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{JSON.stringify(value)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </details>
               ))
             ) : (
