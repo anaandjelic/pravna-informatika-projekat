@@ -6,13 +6,13 @@
         "optuzeni": "R. M.",
         "tuzilac": "osnovni",
         "vr_ukradenih_stvari": "390.0",
-        "kriv_delo": "teška krađa",
+        "kriv_delo": "teska kradja",
         "clanovi_kriv_dela": "čl. 240 st.1 tač.1 Krivičnog zakonika",
         "clanovi_osude": "čl.4, 32, 36 i 42 Krivičnog zakonika;čl. 226, 229 i 374 ZKP-a",
         "kazna": "kaznu zatvora u trajanju od 2 (dvije) godine",
-        "namera": "stealing property",
-        "nacin_kradje": "breaking into closed buildings",
-        "jaccard_similarity": "1.100"
+        "namera": "kradja imovine",
+        "nacin_kradje": "provala u zatvoreno imanje",
+        "jaccard_similarity": "1.098"
     },
     {
         "sud": "OSNOVNI SUD U BARU",
@@ -21,13 +21,13 @@
         "optuzeni": "Š. N.",
         "tuzilac": "osnovni",
         "vr_ukradenih_stvari": "512.89",
-        "kriv_delo": "teška krađa",
+        "kriv_delo": "teska kradja",
         "clanovi_kriv_dela": "čl .240. st.1. tač. 1. Krivičnog zakonika",
         "clanovi_osude": "čl. 4, 32, 36 i 42 Krivičnog zakonika;čl. 359, 360 i 364 ZKP",
         "kazna": "kaznu zatvora u trajanju od 1 (jedne) godine",
-        "namera": "stealing property",
-        "nacin_kradje": "breaking into closed buildings",
-        "jaccard_similarity": "1.076"
+        "namera": "kradja imovine",
+        "nacin_kradje": "provala u zatvoreno imanje",
+        "jaccard_similarity": "1.078"
     },
     {
         "sud": "OSNOVNI SUD U PODGORICI",
@@ -36,13 +36,13 @@
         "optuzeni": "S.T.",
         "tuzilac": "osnovni",
         "vr_ukradenih_stvari": "300.0",
-        "kriv_delo": "krađa",
+        "kriv_delo": "kradja",
         "clanovi_kriv_dela": "čl. 239 st. 1 Krivičnog zakonika Crne Gore",
         "clanovi_osude": "čl. 3, 4, 5, 13, 15, 32, 33, 36, 42 i 43 Krivičnog zakonika Crne Gore;čl. 226, 227, 229, 239 i 374 Zakonika o krivičnom postupku",
         "kazna": "kaznu zatvora u trajanju od 1 (jedne) godine",
-        "namera": "own illegal property benefit",
-        "nacin_kradje": "standard",
-        "jaccard_similarity": "0.249"
+        "namera": "za sopstvenu ilegalnu korist",
+        "nacin_kradje": "standardno",
+        "jaccard_similarity": "0.163"
     },
     {
         "sud": "OSNOVNI SUD U BARU",
@@ -51,27 +51,27 @@
         "optuzeni": "R. M.",
         "tuzilac": "osnovni",
         "vr_ukradenih_stvari": "270.0",
-        "kriv_delo": "krađa",
+        "kriv_delo": "kradja",
         "clanovi_kriv_dela": "čl. 239 st. 1 Krivičnog zakonika",
         "clanovi_osude": "čl. 4, 5, 15, 32, 36 i 42 Krivičnog zakonika;čl. 369, čl. 370 i 374 Zakonika o krivičnom postupku",
         "kazna": "kaznu zatvora u trajanju od 6 (šest) mjeseci",
-        "namera": "own illegal property benefit",
-        "nacin_kradje": "standard",
-        "jaccard_similarity": "0.243"
+        "namera": "za sopstvenu ilegalnu korist",
+        "nacin_kradje": "standardno",
+        "jaccard_similarity": "0.157"
     },
     {
-        "sud": "OSNOVNI SUD U BARU",
-        "broj_slucaja": "K 298 2021",
-        "sudija": "Vladana Raičević",
-        "optuzeni": "J. E.",
+        "sud": "OSNOVNI SUD U PODGORICI",
+        "broj_slucaja": "K 834 2012",
+        "sudija": "Jovović Željki",
+        "optuzeni": "H. S.",
         "tuzilac": "osnovni",
-        "vr_ukradenih_stvari": "160.0",
-        "kriv_delo": "razbojnička krađa",
-        "clanovi_kriv_dela": "čl.241 st.1 Krivičnog zakonika Crne Gore",
-        "clanovi_osude": "čl. 3, 4, 5, 13, 15, 32, 36, 42 i 51 Krivičnog zakonika Crne Gore;čl.226, 229 i 374 Zakonika o krivičnom postupku",
-        "kazna": "kaznu zatvora u trajanju od 1 (jedne) godine i 6 (šest) mjeseci",
-        "namera": "uses force",
-        "nacin_kradje": "group_or_seriously_injured",
-        "jaccard_similarity": "0.138"
+        "vr_ukradenih_stvari": "148.5",
+        "kriv_delo": "razbojnicka kradja",
+        "clanovi_kriv_dela": "čl. 241 st. 6 u vezi st. 1 u vezi čl. 23 Krivičnog zakonika",
+        "clanovi_osude": "čl. 4 st. 2, 32, 36, 42 st. 1, Krivičnog zakonika;čl. 226, 229, 239 i 374 Zakonika o krivičnom postupku",
+        "kazna": "kaznu zatvora u trajanju od 4 (četiri) mjeseca",
+        "namera": "koristi silu",
+        "nacin_kradje": "standardno",
+        "jaccard_similarity": "0.141"
     }
 ]

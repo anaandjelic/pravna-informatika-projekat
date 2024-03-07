@@ -241,22 +241,28 @@
      <rdfs:domain rdf:resource='&export;competition_outcome_arrangement_lv3'/>
 </rdf:Property>
 
-<export:max_imprisonment_robbery_4 rdf:about='&export;max_imprisonment_robbery_41'>
-     <export:value>15</export:value>
+<export:max_imprisonment_robbery_2 rdf:about='&export;max_imprisonment_robbery_21'>
+     <export:value>10</export:value>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof1</defeasible:proof>
-</export:max_imprisonment_robbery_4>
+</export:max_imprisonment_robbery_2>
 
-<export:min_imprisonment_robbery_3 rdf:about='&export;min_imprisonment_robbery_31'>
-     <export:value>3</export:value>
+<export:min_imprisonment_robbery_2 rdf:about='&export;min_imprisonment_robbery_21'>
+     <export:value>2</export:value>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof3</defeasible:proof>
-</export:min_imprisonment_robbery_3>
+</export:min_imprisonment_robbery_2>
 
-<export:robbery_lv4 rdf:about='&export;robbery_lv41'>
-     <export:defendant>John</export:defendant>
+<export:robbery_min_imprisonment_lv2_3 rdf:about='&export;robbery_min_imprisonment_lv2_31'>
+     <export:defendant>G.G.</export:defendant>
+     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof4</defeasible:proof>
+</export:robbery_min_imprisonment_lv2_3>
+
+<export:robbery_lv2 rdf:about='&export;robbery_lv21'>
+     <export:defendant>G.G.</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof2</defeasible:proof>
-</export:robbery_lv4>
+</export:robbery_lv2>
 
 </rdf:RDF>
