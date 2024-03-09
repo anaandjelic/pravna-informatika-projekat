@@ -697,6 +697,7 @@ export default function NovaPresuda() {
                   className="mt-2 pr-3"
                 >
                   <summary>Jaccard similarity: {`${(caseResult.jaccard_similarity * 100).toFixed(2)}%`}</summary>
+                  <ScrollArea className="h-28" type="always">
                   <table className="min-w-full divide-y divide-gray-200">
                     <tbody className="bg-white divide-y divide-gray-200">
                       {Object.entries(caseResult).map(([key, value], idx) => (
@@ -707,6 +708,7 @@ export default function NovaPresuda() {
                       ))}
                     </tbody>
                   </table>
+                  </ScrollArea>
                 </details>
               ))
             ) : (

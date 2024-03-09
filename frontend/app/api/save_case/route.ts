@@ -13,6 +13,7 @@ interface Case {
   punishment: string;
   explanation: string;
   fileName: string;
+  sanction: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -94,6 +95,11 @@ export async function POST(request: NextRequest) {
       <p class="header">K R I V J E</p>
       <p>&nbsp;</p>
       
+      <p>
+        ${caseToSave.sanction}
+      </p>
+        
+
       <p>&nbsp;</p>
       <p class="header">O S U Đ U J E</p>
       <p>&nbsp;</p>
