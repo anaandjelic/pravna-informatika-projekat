@@ -1,6 +1,7 @@
 package ftn.uns.ac.rs.backend;
 
 import ftn.uns.ac.rs.backend.dto.CaseBasedReasoningDTO;
+import ftn.uns.ac.rs.backend.dto.MetadataDTO;
 import lombok.AllArgsConstructor;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
@@ -259,4 +260,48 @@ public class CaseService {
 				.collect(Collectors.joining(","));
 	}
 
+	public MetadataDTO extractNewCaseMetadata(String caseNumber) {
+		String backendPath = System.getProperty("user.dir");
+		Path backendPathObject = Paths.get(backendPath);
+
+		Path rootPathObject = backendPathObject.getParent();
+		String rootPath = rootPathObject.toString();
+
+		String pathToCases = rootPath + "/nlp-output.csv";
+		List<String> columnValues = new ArrayList<>();
+		try (BufferedReader br = Files.newBufferedReader(Paths.get(pathToCases), StandardCharsets.UTF_8)) {
+			String line;
+			boolean headerProcessed = false;
+			int columnIndex = -1;
+			String[] headers = null;
+			while ((line = br.readLine()) != null) {
+				String[] parts = line.split(",");
+				if (!headerProcessed) {
+					headers = parts;
+					for (int i = 0; i < headers.length; i++) {
+						if (headers[i].trim().equalsIgnoreCase("broj_slucaja")) {
+							columnIndex = i;
+							break;
+						}
+					}
+					if (columnIndex == -1) {
+						throw new IllegalArgumentException("Column name not found in CSV headers");
+					}
+					headerProcessed = true;
+					continue;
+				}
+				String modifiedCaseNumber = parts[columnIndex].trim().replaceAll("/", " ");
+				if (parts.length > columnIndex && modifiedCaseNumber.equals(caseNumber)) {
+					for (String part : parts) {
+						columnValues.add(part.trim());
+					}
+					break;
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return new MetadataDTO(columnValues.get(0), columnValues.get(1), columnValues.get(2), columnValues.get(3), columnValues.get(4), Float.parseFloat(columnValues.get(5)), columnValues.get(6), columnValues.get(7), columnValues.get(8), columnValues.get(9));
+
+	}
 }

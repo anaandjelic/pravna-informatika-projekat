@@ -602,7 +602,7 @@ export default function NovaPresuda() {
                     name="sankcija"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Sankcija</FormLabel>
+                        <FormLabel>Kriv je zbog:</FormLabel>
                         <FormControl>
                           <Input {...field} />
                         </FormControl>

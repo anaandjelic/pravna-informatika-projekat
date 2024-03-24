@@ -46,7 +46,7 @@ export default function HTMLPresude() {
   }, [selectedHTMLIndex, presude]);
 
   return (
-    <div className="flex h-full flex-row overflow-hidden space-x-6 pr-2 pb-2">
+    <div className="flex h-full flex-row space-x-6 pr-2 pb-2">
       <Card className="h-full">
         <CardHeader>
           <CardTitle>HTML Presude</CardTitle>
@@ -72,7 +72,7 @@ export default function HTMLPresude() {
         </CardContent>
       </Card>
       <div className="flex flex-col flex-grow space-y-6">
-        <ScrollArea className="w-full h-2/3">
+        <ScrollArea className="w-full h-2/3 !overflow-visible scroll-contain">
           <div
             className="flex-grow w-full"
             dangerouslySetInnerHTML={{ __html: htmlText }}

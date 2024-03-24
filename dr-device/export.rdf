@@ -254,13 +254,13 @@
 </export:min_imprisonment_robbery_2>
 
 <export:robbery_min_imprisonment_lv2_3 rdf:about='&export;robbery_min_imprisonment_lv2_31'>
-     <export:defendant>G.G.</export:defendant>
+     <export:defendant>A.A.</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof4</defeasible:proof>
 </export:robbery_min_imprisonment_lv2_3>
 
 <export:robbery_lv2 rdf:about='&export;robbery_lv21'>
-     <export:defendant>G.G.</export:defendant>
+     <export:defendant>A.A.</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof2</defeasible:proof>
 </export:robbery_lv2>

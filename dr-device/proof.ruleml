@@ -23,7 +23,7 @@
 <Ind uri='&proof-export;proof2'>proof2</Ind>
 </oid>
 <Literal>
-<RDF_resource uri='robbery_lv2G.G.'/>
+<RDF_resource uri='robbery_lv2A.A.'/>
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
@@ -32,36 +32,36 @@
 <defeasible_body_grounds>
 <Definitely_Proved>
 <Literal>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Literal>
 <Definite_Proof>
 <strict_clause>
 <Fact>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Fact>
 </strict_clause>
 </Definite_Proof>
 </Definitely_Proved>
 <Definitely_Proved>
 <Literal>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Literal>
 <Definite_Proof>
 <strict_clause>
 <Fact>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Fact>
 </strict_clause>
 </Definite_Proof>
 </Definitely_Proved>
 <Definitely_Proved>
 <Literal>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Literal>
 <Definite_Proof>
 <strict_clause>
 <Fact>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Fact>
 </strict_clause>
 </Definite_Proof>
@@ -95,7 +95,7 @@
 <Ind uri='&proof-export;proof4'>proof4</Ind>
 </oid>
 <Literal>
-<RDF_resource uri='robbery_min_imprisonment_lv2_3G.G.'/>
+<RDF_resource uri='robbery_min_imprisonment_lv2_3A.A.'/>
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
@@ -104,36 +104,36 @@
 <defeasible_body_grounds>
 <Definitely_Proved>
 <Literal>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Literal>
 <Definite_Proof>
 <strict_clause>
 <Fact>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Fact>
 </strict_clause>
 </Definite_Proof>
 </Definitely_Proved>
 <Definitely_Proved>
 <Literal>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Literal>
 <Definite_Proof>
 <strict_clause>
 <Fact>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Fact>
 </strict_clause>
 </Definite_Proof>
 </Definitely_Proved>
 <Definitely_Proved>
 <Literal>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Literal>
 <Definite_Proof>
 <strict_clause>
 <Fact>
-<RDF_resource uri='&lc;K_1111_2024'/>
+<RDF_resource uri='&lc;K_10002_2024'/>
 </Fact>
 </strict_clause>
 </Definite_Proof>
