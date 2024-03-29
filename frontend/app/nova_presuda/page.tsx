@@ -668,17 +668,17 @@ export default function NovaPresuda() {
                   variant="outline"
                   type="button"
                 >
-                  Case Based Reasoning
+                  Rasuđivanje po slučajevima
                 </Button>
                 <Button
                   onClick={form.handleSubmit(getRuleBasedReasoning)}
                   variant="outline"
                   type="button"
                 >
-                  Rule Based Reasoning
+                  Rasuđivanje po pravilima
                 </Button>
                 <div className="flex-grow"></div>
-                <Button type="submit">Submit</Button>
+                <Button type="submit">Presuda</Button>
               </div>
             </CardFooter>
           </form>
@@ -687,7 +687,7 @@ export default function NovaPresuda() {
       <div className="w-1/2 h-full space-y-6">
         <Card className="w-full">
           <CardHeader className="border-b">
-            <CardTitle>Case Based Reasoning</CardTitle>
+            <CardTitle>Rasuđivanje po slučajevima</CardTitle>
           </CardHeader>
           <CardContent>
             {caseBasedResult && caseBasedResult.length > 0 ? (
@@ -712,16 +712,16 @@ export default function NovaPresuda() {
                 </details>
               ))
             ) : (
-              <div>Run case based reasoning to see results.</div>
+              <div>Pokrenite rasuđivanje po slučajevima da biste videli rezultate.</div>
             )}
           </CardContent>
         </Card>
         <Card className="w-full">
           <CardHeader className="border-b">
-            <CardTitle>Rule Based Reasoning</CardTitle>
+            <CardTitle>Rasuđivanje po pravilima</CardTitle>
           </CardHeader>
           <CardContent>
-            {ruleBasedResult ? <p>{ruleBasedResult}</p> : <div>Run rule based reasoning to see results.</div>}
+            {ruleBasedResult ? <p>{ruleBasedResult}</p> : <div>Pokrenite rasuđivanje po pravilima da biste videli rezultate.</div>}
           </CardContent>
         </Card>
       </div>
