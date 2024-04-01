@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
 <!DOCTYPE html>
 <html>
   <style>
-    body {
+    body.scoped {
       font-size: 0.9rem;
       font-family: Source Sans Pro, sans-serif;
       line-height: 1.5;
@@ -30,27 +30,27 @@ export async function POST(request: NextRequest) {
       min-width: 100px;
     }
 
-    a {
+    a.scoped {
       color: #236693;
       font-weight: 700;
     }
 
-    a:link {
+    a.scoped:link {
       background-color: transparent;
       text-decoration: none;
     }
 
-    a:visited {
+    a.scoped:visited {
       background-color: transparent;
       text-decoration: none;
     }
 
-    a:hover {
+    a.scoped:hover {
       background-color: transparent;
       text-decoration: underline;
     }
 
-    a:active {
+    a.scoped:active {
       background-color: transparent;
       text-decoration: underline;
     }
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     }
   </style>
 
-  <body>
+  <body class="scoped">
     <div style="padding: 20px 0; width: 100%; text-align: center">
       <p style="font-size: 0.8rem; line-height: 1rem; margin: auto">${caseToSave.court}</p>
       <p style="color: #245474; font-size: 2rem; font-weight: 700; line-height: 2rem; margin: auto">
@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
         kao prvostepeni krivični, sudija ${caseToSave.judge},
         uz učešće Ane Ivanović, kao zapisničara, u krivičnom predmetu
         okrivljenog ${caseToSave.defendant} zbog krivičnog dela
-        ${caseToSave.criminalAct} iz <a>${caseToSave.articlesCriminalAct} u KZ</a>
+        ${caseToSave.criminalAct} iz <a class="scoped">${caseToSave.articlesCriminalAct} u KZ</a>
       </p>
 
       <p>&nbsp;</p>
