@@ -113,6 +113,9 @@ public class RuleBasedReasoningService {
             reasoning += "Član 244a Stavka 3: Dogovoren ishod sportskog ili drugog takmičenja u nameri da se sebi ili drugom pribavi korist." +
                     " Vrednost pribavljene imovinske koristi prelazi iznos od 40000e.";
         }
+        else {
+            reasoning = "";
+        }
 
         reasoning += " KAZNA: ";
 
@@ -147,11 +150,11 @@ public class RuleBasedReasoningService {
             reasoning += " Maksimalan broj godina u zatvoru je 3 godina.";
         }
         if (StringUtils.substringBetween(raw_reasoning, "<export:min_imprisonment_competition_outcome_arrangement_1",
-                "</min_imprisonment_competition_outcome_arrangement_1>") != null) {
+                "</export:min_imprisonment_competition_outcome_arrangement_1>") != null) {
             reasoning += " Minimalan broj meseci u zatvoru je 6 meseci.";
         }
         if (StringUtils.substringBetween(raw_reasoning, "<export:max_imprisonment_competition_outcome_arrangement_1",
-                "</max_imprisonment_competition_outcome_arrangement_1>") != null) {
+                "</export:max_imprisonment_competition_outcome_arrangement_1>") != null) {
             reasoning += " Maksimalan broj godina u zatvoru je 3 godine.";
         }
         if (StringUtils.substringBetween(raw_reasoning, "<export:max_imprisonment_competition_outcome_arrangement_2",
@@ -165,6 +168,9 @@ public class RuleBasedReasoningService {
         if (StringUtils.substringBetween(raw_reasoning, "<export:max_imprisonment_competition_outcome_arrangement_3",
                 "</export:max_imprisonment_competition_outcome_arrangement_3>") != null) {
             reasoning += " Maksimalan broj godina u zatvoru je 10 godina.";
+        }
+        if (reasoning.equals(" KAZNA: ")) {
+            reasoning = "Za date podatke nije pronađen prekršen zakon.";
         }
         return reasoning;
     }

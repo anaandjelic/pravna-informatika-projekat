@@ -11,11 +11,11 @@
 <Ind uri='&proof-export;proof1'>proof1</Ind>
 </oid>
 <Literal>
-<RDF_resource uri='&export;max_imprisonment_robbery_21'/>
+<RDF_resource uri='&export;max_imprisonment_competition_outcome_arrangement_31'/>
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
-<rule_ref rule='&rulebase;pen4'/>
+<rule_ref rule='&rulebase;pen15'/>
 </supportive_rule>
 <defeasible_body_grounds>
 <Defeasibly_Proved>
@@ -23,45 +23,33 @@
 <Ind uri='&proof-export;proof2'>proof2</Ind>
 </oid>
 <Literal>
-<RDF_resource uri='robbery_lv2A.A.'/>
+<RDF_resource uri='competition_outcome_arrangement_lv3H.H.'/>
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
-<rule_ref rule='&rulebase;rule3'/>
+<rule_ref rule='&rulebase;rule13'/>
 </supportive_rule>
 <defeasible_body_grounds>
 <Definitely_Proved>
 <Literal>
-<RDF_resource uri='&lc;K_10002_2024'/>
+<RDF_resource uri='&lc;K_20002_2024'/>
 </Literal>
 <Definite_Proof>
 <strict_clause>
 <Fact>
-<RDF_resource uri='&lc;K_10002_2024'/>
+<RDF_resource uri='&lc;K_20002_2024'/>
 </Fact>
 </strict_clause>
 </Definite_Proof>
 </Definitely_Proved>
 <Definitely_Proved>
 <Literal>
-<RDF_resource uri='&lc;K_10002_2024'/>
+<RDF_resource uri='&lc;K_20002_2024'/>
 </Literal>
 <Definite_Proof>
 <strict_clause>
 <Fact>
-<RDF_resource uri='&lc;K_10002_2024'/>
-</Fact>
-</strict_clause>
-</Definite_Proof>
-</Definitely_Proved>
-<Definitely_Proved>
-<Literal>
-<RDF_resource uri='&lc;K_10002_2024'/>
-</Literal>
-<Definite_Proof>
-<strict_clause>
-<Fact>
-<RDF_resource uri='&lc;K_10002_2024'/>
+<RDF_resource uri='&lc;K_20002_2024'/>
 </Fact>
 </strict_clause>
 </Definite_Proof>
@@ -83,67 +71,14 @@
 <Ind uri='&proof-export;proof3'>proof3</Ind>
 </oid>
 <Literal>
-<RDF_resource uri='&export;min_imprisonment_robbery_21'/>
+<RDF_resource uri='&export;min_imprisonment_competition_outcome_arrangement_21'/>
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
-<rule_ref rule='&rulebase;pen3'/>
+<rule_ref rule='&rulebase;pen14'/>
 </supportive_rule>
 <defeasible_body_grounds>
-<Defeasibly_Proved>
-<oid>
-<Ind uri='&proof-export;proof4'>proof4</Ind>
-</oid>
-<Literal>
-<RDF_resource uri='robbery_min_imprisonment_lv2_3A.A.'/>
-</Literal>
-<Defeasible_Proof>
-<supportive_rule>
-<rule_ref rule='&rulebase;rule2'/>
-</supportive_rule>
-<defeasible_body_grounds>
-<Definitely_Proved>
-<Literal>
-<RDF_resource uri='&lc;K_10002_2024'/>
-</Literal>
-<Definite_Proof>
-<strict_clause>
-<Fact>
-<RDF_resource uri='&lc;K_10002_2024'/>
-</Fact>
-</strict_clause>
-</Definite_Proof>
-</Definitely_Proved>
-<Definitely_Proved>
-<Literal>
-<RDF_resource uri='&lc;K_10002_2024'/>
-</Literal>
-<Definite_Proof>
-<strict_clause>
-<Fact>
-<RDF_resource uri='&lc;K_10002_2024'/>
-</Fact>
-</strict_clause>
-</Definite_Proof>
-</Definitely_Proved>
-<Definitely_Proved>
-<Literal>
-<RDF_resource uri='&lc;K_10002_2024'/>
-</Literal>
-<Definite_Proof>
-<strict_clause>
-<Fact>
-<RDF_resource uri='&lc;K_10002_2024'/>
-</Fact>
-</strict_clause>
-</Definite_Proof>
-</Definitely_Proved>
-</defeasible_body_grounds>
-<not_strongly_attacked/>
-<defeasible_attackers_blocked>
-</defeasible_attackers_blocked>
-</Defeasible_Proof>
-</Defeasibly_Proved>
+<proof_ref proof='&proof-export;proof2'/>
 </defeasible_body_grounds>
 <not_strongly_attacked/>
 <defeasible_attackers_blocked>

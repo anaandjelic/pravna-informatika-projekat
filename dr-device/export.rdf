@@ -241,28 +241,22 @@
      <rdfs:domain rdf:resource='&export;competition_outcome_arrangement_lv3'/>
 </rdf:Property>
 
-<export:max_imprisonment_robbery_2 rdf:about='&export;max_imprisonment_robbery_21'>
+<export:max_imprisonment_competition_outcome_arrangement_3 rdf:about='&export;max_imprisonment_competition_outcome_arrangement_31'>
      <export:value>10</export:value>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof1</defeasible:proof>
-</export:max_imprisonment_robbery_2>
+</export:max_imprisonment_competition_outcome_arrangement_3>
 
-<export:min_imprisonment_robbery_2 rdf:about='&export;min_imprisonment_robbery_21'>
-     <export:value>2</export:value>
+<export:min_imprisonment_competition_outcome_arrangement_2 rdf:about='&export;min_imprisonment_competition_outcome_arrangement_21'>
+     <export:value>1</export:value>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof3</defeasible:proof>
-</export:min_imprisonment_robbery_2>
+</export:min_imprisonment_competition_outcome_arrangement_2>
 
-<export:robbery_min_imprisonment_lv2_3 rdf:about='&export;robbery_min_imprisonment_lv2_31'>
-     <export:defendant>A.A.</export:defendant>
-     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
-     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof4</defeasible:proof>
-</export:robbery_min_imprisonment_lv2_3>
-
-<export:robbery_lv2 rdf:about='&export;robbery_lv21'>
-     <export:defendant>A.A.</export:defendant>
+<export:competition_outcome_arrangement_lv3 rdf:about='&export;competition_outcome_arrangement_lv31'>
+     <export:defendant>H.H.</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof2</defeasible:proof>
-</export:robbery_lv2>
+</export:competition_outcome_arrangement_lv3>
 
 </rdf:RDF>

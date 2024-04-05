@@ -53,6 +53,8 @@ const kradje = [
 const nameraKradje = [
   "own_illegal_property_benefit",
   "stealing_property",
+  "own_benefit",
+  "someones_benefit",
   "keeps_stolen_thing",
   "uses_force",
   "threatens_to_attack",
